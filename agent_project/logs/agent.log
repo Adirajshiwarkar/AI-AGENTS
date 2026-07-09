@@ -1,0 +1,987 @@
+2026-07-09 11:37:11 - agent_logger - INFO - [app.py:89] - Starting server on 0.0.0.0:8000
+2026-07-09 11:38:48 - agent_logger - INFO - [app.py:89] - Starting server on 0.0.0.0:8000
+2026-07-09 11:40:44 - agent_logger - INFO - [test_agent.py:73] - =========================================
+2026-07-09 11:40:44 - agent_logger - INFO - [test_agent.py:74] - TESTING VALIDATION RULES
+2026-07-09 11:40:44 - agent_logger - INFO - [test_agent.py:75] - =========================================
+2026-07-09 11:40:44 - agent_logger - ERROR - [app.py:41] - Validation error on /agent: [{'field': 'body.request', 'message': 'Value error, Request must not be empty or blank.'}]
+2026-07-09 11:40:44 - agent_logger - INFO - [test_agent.py:80] - Empty request status (expected 422): 422
+2026-07-09 11:40:44 - agent_logger - ERROR - [app.py:41] - Validation error on /agent: [{'field': 'body.request', 'message': 'Value error, Request is too short. Please provide a more descriptive prompt (minimum 10 characters).'}]
+2026-07-09 11:40:44 - agent_logger - INFO - [test_agent.py:86] - Short request status (expected 422): 422
+2026-07-09 11:40:44 - agent_logger - INFO - [test_agent.py:88] - Validation tests passed successfully.
+
+2026-07-09 11:40:44 - agent_logger - INFO - [test_agent.py:14] - =========================================
+2026-07-09 11:40:44 - agent_logger - INFO - [test_agent.py:15] - TESTING EXAMPLE 1: AI Chatbot Proposal
+2026-07-09 11:40:44 - agent_logger - INFO - [test_agent.py:16] - =========================================
+2026-07-09 11:40:44 - agent_logger - INFO - [routes.py:40] - Received API request: 'Generate a project proposal for implementing an AI chatbot for customer support.'
+2026-07-09 11:40:44 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 11:40:44 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 11:40:44 - agent_logger - INFO - [llm_factory.py:27] - Initializing Groq LLM Provider...
+2026-07-09 11:40:44 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 11:40:44 - agent_logger - WARNING - [groq_client.py:48] - Groq generation failed with model llama3-8b-8192: Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Trying next model...
+2026-07-09 11:40:45 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Proposal
+2026-07-09 11:40:45 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Introduction', 'Background', 'Objectives', 'Scope of Work', 'Methodology', 'Technical Requirements', 'Implementation Plan', 'Timeline', 'Budget and Cost Estimate', 'Risks & Mitigations', 'Conclusion', 'Recommendations']
+2026-07-09 11:40:45 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 11:40:45 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Proposal
+2026-07-09 11:40:45 - agent_logger - WARNING - [groq_client.py:48] - Groq generation failed with model llama3-8b-8192: Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Trying next model...
+2026-07-09 11:40:47 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ['The project timeline is approximately 6-9 months, assuming a team size of 4-6 members, including a project manager, AI engineer, software developer, QA engineer, and a technical writer.', 'The budget for the project is between $200,000 to $500,000, covering the costs of personnel, infrastructure, and potential third-party AI platform subscriptions.', 'The technical stack will include a cloud-based AI platform such as Dialogflow, Microsoft Bot Framework, or Rasa, integrated with the existing customer support software and databases.', "The organization has an existing customer support process and knowledge base that can be leveraged to train the AI chatbot, with a dedicated team member responsible for maintaining and updating the chatbot's knowledge base.", 'The chatbot will be designed to handle a minimum of 50% of the current customer support inquiries, with a goal of achieving a customer satisfaction rating of 85% or higher.', 'The organization has the necessary infrastructure and security measures in place to support the deployment of an AI chatbot, including data encryption, access controls, and compliance with relevant data protection regulations.']
+2026-07-09 11:40:47 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 11:40:47 - agent_logger - WARNING - [groq_client.py:48] - Groq generation failed with model llama3-8b-8192: Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Trying next model...
+2026-07-09 11:40:53 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand request', 'Extract objectives', 'Identify document type', 'Determine required sections', 'Create assumptions', 'Generate outline', 'Generate content for Title Page', 'Generate content for Executive Summary', 'Generate content for Introduction', 'Generate content for Background', 'Generate content for Objectives', 'Generate content for Scope of Work', 'Generate content for Methodology', 'Generate content for Technical Requirements', 'Generate content for Implementation Plan', 'Generate content for Timeline', 'Generate content for Budget and Cost Estimate', 'Generate content for Risks & Mitigations', 'Generate content for Conclusion', 'Generate content for Recommendations', 'Format document', 'Validate document', 'Reflect and improve']
+2026-07-09 11:40:53 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 23 tasks sequentially.
+2026-07-09 11:40:53 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand request
+2026-07-09 11:40:53 - agent_logger - INFO - [executor.py:35] - Task 'Understand request' executed successfully.
+2026-07-09 11:40:53 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract objectives
+2026-07-09 11:40:53 - agent_logger - INFO - [executor.py:35] - Task 'Extract objectives' executed successfully.
+2026-07-09 11:40:53 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify document type
+2026-07-09 11:40:53 - agent_logger - INFO - [executor.py:35] - Task 'Identify document type' executed successfully.
+2026-07-09 11:40:53 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine required sections
+2026-07-09 11:40:53 - agent_logger - INFO - [executor.py:35] - Task 'Determine required sections' executed successfully.
+2026-07-09 11:40:53 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions
+2026-07-09 11:40:53 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions' executed successfully.
+2026-07-09 11:40:53 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate outline
+2026-07-09 11:40:53 - agent_logger - INFO - [executor.py:43] - Generating content for 14 sections...
+2026-07-09 11:40:53 - agent_logger - INFO - [executor.py:47] - Generating section: Title Page
+2026-07-09 11:40:53 - agent_logger - WARNING - [groq_client.py:48] - Groq generation failed with model llama3-8b-8192: Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Trying next model...
+2026-07-09 11:41:18 - agent_logger - INFO - [executor.py:47] - Generating section: Executive Summary
+2026-07-09 11:41:18 - agent_logger - WARNING - [groq_client.py:48] - Groq generation failed with model llama3-8b-8192: Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Trying next model...
+2026-07-09 11:41:44 - agent_logger - INFO - [executor.py:47] - Generating section: Introduction
+2026-07-09 11:41:44 - agent_logger - WARNING - [groq_client.py:48] - Groq generation failed with model llama3-8b-8192: Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Trying next model...
+2026-07-09 11:41:47 - agent_logger - INFO - [executor.py:47] - Generating section: Background
+2026-07-09 11:41:47 - agent_logger - WARNING - [groq_client.py:48] - Groq generation failed with model llama3-8b-8192: Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Trying next model...
+2026-07-09 11:41:49 - agent_logger - INFO - [executor.py:47] - Generating section: Objectives
+2026-07-09 11:41:49 - agent_logger - WARNING - [groq_client.py:48] - Groq generation failed with model llama3-8b-8192: Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Trying next model...
+2026-07-09 11:42:10 - agent_logger - INFO - [executor.py:47] - Generating section: Scope of Work
+2026-07-09 11:42:10 - agent_logger - WARNING - [groq_client.py:48] - Groq generation failed with model llama3-8b-8192: Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Trying next model...
+2026-07-09 11:51:02 - agent_logger - INFO - [test_agent.py:73] - =========================================
+2026-07-09 11:51:02 - agent_logger - INFO - [test_agent.py:74] - TESTING VALIDATION RULES
+2026-07-09 11:51:02 - agent_logger - INFO - [test_agent.py:75] - =========================================
+2026-07-09 11:51:02 - agent_logger - ERROR - [app.py:41] - Validation error on /agent: [{'field': 'body.request', 'message': 'Value error, Request must not be empty or blank.'}]
+2026-07-09 11:51:02 - agent_logger - INFO - [test_agent.py:80] - Empty request status (expected 422): 422
+2026-07-09 11:51:02 - agent_logger - ERROR - [app.py:41] - Validation error on /agent: [{'field': 'body.request', 'message': 'Value error, Request is too short. Please provide a more descriptive prompt (minimum 10 characters).'}]
+2026-07-09 11:51:02 - agent_logger - INFO - [test_agent.py:86] - Short request status (expected 422): 422
+2026-07-09 11:51:02 - agent_logger - INFO - [test_agent.py:88] - Validation tests passed successfully.
+
+2026-07-09 11:51:02 - agent_logger - INFO - [test_agent.py:14] - =========================================
+2026-07-09 11:51:02 - agent_logger - INFO - [test_agent.py:15] - TESTING EXAMPLE 1: AI Chatbot Proposal
+2026-07-09 11:51:02 - agent_logger - INFO - [test_agent.py:16] - =========================================
+2026-07-09 11:51:02 - agent_logger - INFO - [routes.py:40] - Received API request: 'Generate a project proposal for implementing an AI chatbot for customer support.'
+2026-07-09 11:51:02 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 11:51:02 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 11:51:02 - agent_logger - INFO - [llm_factory.py:27] - Initializing Groq LLM Provider...
+2026-07-09 11:51:02 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 11:51:02 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Proposal
+2026-07-09 11:51:02 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Company Overview', 'Problem Statement', 'Solution Overview', 'Objectives', 'Background', 'Methodology', 'Implementation Plan', 'Timeline', 'Budget and Cost Structure', 'Conclusion']
+2026-07-09 11:51:02 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 11:51:02 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Proposal
+2026-07-09 11:51:07 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ['Assumption 1: The customer support chatbot will be integrated with an existing CRM system, which may require additional development and testing time.', "Assumption 2: The chatbot's language understanding and response capabilities will be based on a pre-trained AI model, which may require additional fine-tuning and customization to meet the company's specific needs.", 'Assumption 3: The team size for this project will be 5-7 members, including a project manager, AI/ML engineer, software developer, quality assurance engineer, and two business analysts.', 'Assumption 4: The project timeline is estimated to be 12-16 weeks, with the following milestones: requirements gathering (2 weeks), design and development (6 weeks), testing and quality assurance (4 weeks), and deployment (2-4 weeks).', 'Assumption 5: The technical stack for this project will include a cloud-based AI platform (e.g., Google Cloud AI Platform, Amazon SageMaker), a messaging platform (e.g., Twilio, Nexmo), and a programming language (e.g., Python, Java).', "Assumption 6: The company's organizational constraints, such as data security and compliance requirements, will be taken into account during the development and deployment of the chatbot, and may require additional resources and time."]
+2026-07-09 11:51:07 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 11:51:29 - agent_logger - ERROR - [helpers.py:32] - Failed to parse JSON: Expecting ',' delimiter: line 17 column 1 (char 1839). Raw content length: 2694. Cleaned content: {
+  "tasks": [
+    "Understand request and requirements for the AI chatbot project proposal",
+    "Extract project objectives and key performance indicators (KPIs)",
+    "Identify the document type as
+2026-07-09 11:51:29 - agent_logger - ERROR - [planner.py:67] - Task generation LLM query failed: Parsed planner JSON did not contain tasks array.. Using fallback checklist.
+2026-07-09 11:51:29 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand request', 'Extract objectives', 'Identify document type', 'Determine required sections', 'Create assumptions', 'Generate outline', 'Generate content', 'Format document', 'Validate document', 'Reflect and improve']
+2026-07-09 11:51:29 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 10 tasks sequentially.
+2026-07-09 11:51:29 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand request
+2026-07-09 11:51:29 - agent_logger - INFO - [executor.py:35] - Task 'Understand request' executed successfully.
+2026-07-09 11:51:29 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract objectives
+2026-07-09 11:51:29 - agent_logger - INFO - [executor.py:35] - Task 'Extract objectives' executed successfully.
+2026-07-09 11:51:29 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify document type
+2026-07-09 11:51:29 - agent_logger - INFO - [executor.py:35] - Task 'Identify document type' executed successfully.
+2026-07-09 11:51:29 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine required sections
+2026-07-09 11:51:29 - agent_logger - INFO - [executor.py:35] - Task 'Determine required sections' executed successfully.
+2026-07-09 11:51:29 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions
+2026-07-09 11:51:29 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions' executed successfully.
+2026-07-09 11:51:29 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate outline
+2026-07-09 11:51:29 - agent_logger - INFO - [executor.py:43] - Generating content for 12 sections...
+2026-07-09 11:51:29 - agent_logger - INFO - [executor.py:47] - Generating section: Title Page
+2026-07-09 11:51:42 - agent_logger - INFO - [executor.py:47] - Generating section: Executive Summary
+2026-07-09 11:51:57 - agent_logger - INFO - [executor.py:47] - Generating section: Company Overview
+2026-07-09 11:51:58 - agent_logger - INFO - [executor.py:47] - Generating section: Problem Statement
+2026-07-09 11:51:58 - agent_logger - WARNING - [groq_client.py:49] - Groq generation failed with model llama-3.1-8b-instant: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.1-8b-instant` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 6237, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 11:52:02 - agent_logger - INFO - [executor.py:47] - Generating section: Solution Overview
+2026-07-09 11:52:02 - agent_logger - WARNING - [groq_client.py:49] - Groq generation failed with model llama-3.1-8b-instant: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.1-8b-instant` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 7472, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 11:52:17 - agent_logger - INFO - [executor.py:47] - Generating section: Objectives
+2026-07-09 11:56:11 - agent_logger - INFO - [test_agent.py:77] - =========================================
+2026-07-09 11:56:11 - agent_logger - INFO - [test_agent.py:78] - TESTING VALIDATION RULES
+2026-07-09 11:56:11 - agent_logger - INFO - [test_agent.py:79] - =========================================
+2026-07-09 11:56:11 - agent_logger - ERROR - [app.py:46] - Validation error on /agent: [{'field': 'body.request', 'message': 'Value error, Request must not be empty or blank.'}]
+2026-07-09 11:56:11 - agent_logger - INFO - [test_agent.py:84] - Empty request status (expected 422): 422
+2026-07-09 11:56:11 - agent_logger - ERROR - [app.py:46] - Validation error on /agent: [{'field': 'body.request', 'message': 'Value error, Request is too short. Please provide a more descriptive prompt (minimum 10 characters).'}]
+2026-07-09 11:56:11 - agent_logger - INFO - [test_agent.py:90] - Short request status (expected 422): 422
+2026-07-09 11:56:11 - agent_logger - INFO - [test_agent.py:92] - Validation tests passed successfully.
+
+2026-07-09 11:56:11 - agent_logger - INFO - [test_agent.py:18] - =========================================
+2026-07-09 11:56:11 - agent_logger - INFO - [test_agent.py:19] - TESTING EXAMPLE 1: AI Chatbot Proposal
+2026-07-09 11:56:11 - agent_logger - INFO - [test_agent.py:20] - =========================================
+2026-07-09 11:56:11 - agent_logger - INFO - [routes.py:40] - Received API request: 'Generate a project proposal for implementing an AI chatbot for customer support.'
+2026-07-09 11:56:11 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 11:56:11 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 11:56:11 - agent_logger - INFO - [llm_factory.py:27] - Initializing Groq LLM Provider...
+2026-07-09 11:56:11 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 11:56:12 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Proposal
+2026-07-09 11:56:12 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Introduction', 'Problem Statement', 'Solution Overview', 'Project Scope', 'Objectives', 'Methodology', 'Implementation Plan', 'Timeline', 'Budget and Resources', 'Conclusion']
+2026-07-09 11:56:12 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 11:56:12 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Proposal
+2026-07-09 11:56:12 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ['Assumption 1: The scope of the AI chatbot implementation includes integrating with an existing CRM system, which may require additional development and testing time.', 'Assumption 2: The chatbot will be designed to handle a moderate volume of customer inquiries (less than 1,000 conversations per day), which may impact the choice of cloud infrastructure and scalability requirements.', 'Assumption 3: The project timeline is approximately 12 weeks, which may not account for potential delays in data preparation, model training, or integration with existing systems.', "Assumption 4: The budget allocated for the project is $200,000, which may not cover the costs of additional personnel, training, or infrastructure upgrades required for the project's success.", "Assumption 5: The team size will be 4-6 members, including a project manager, business analyst, technical architect, developer, and quality assurance engineer, which may impact the project's velocity and ability to handle unexpected issues.", "Assumption 6: The technical stack will include a cloud-based natural language processing (NLP) service, such as Google Cloud AI Platform or Amazon Comprehend, which may require additional configuration and customization to meet the project's requirements."]
+2026-07-09 11:56:12 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 11:56:45 - agent_logger - WARNING - [groq_client.py:49] - Groq generation failed with model llama-3.1-8b-instant: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 2060, Requested 4630. Please try again in 6.9s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 11:56:45 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand request', 'Extract objectives', 'Identify document type', 'Determine required sections', 'Create assumptions', 'Review and validate assumptions', 'Generate outline', 'Research and gather information on AI chatbot implementation', 'Generate content for each section', 'Format document according to business proposal standards', 'Validate document for completeness and consistency', 'Reflect and improve the document generation process']
+2026-07-09 11:56:45 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 12 tasks sequentially.
+2026-07-09 11:56:45 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand request
+2026-07-09 11:56:45 - agent_logger - INFO - [executor.py:35] - Task 'Understand request' executed successfully.
+2026-07-09 11:56:45 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract objectives
+2026-07-09 11:56:45 - agent_logger - INFO - [executor.py:35] - Task 'Extract objectives' executed successfully.
+2026-07-09 11:56:45 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify document type
+2026-07-09 11:56:45 - agent_logger - INFO - [executor.py:35] - Task 'Identify document type' executed successfully.
+2026-07-09 11:56:45 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine required sections
+2026-07-09 11:56:45 - agent_logger - INFO - [executor.py:35] - Task 'Determine required sections' executed successfully.
+2026-07-09 11:56:45 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions
+2026-07-09 11:56:45 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions' executed successfully.
+2026-07-09 11:56:45 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Review and validate assumptions
+2026-07-09 11:56:45 - agent_logger - INFO - [executor.py:30] - Initiating structural and file presence checks.
+2026-07-09 11:56:45 - agent_logger - INFO - [logger.py:82] - Executing Task 7: Generate outline
+2026-07-09 11:56:45 - agent_logger - INFO - [executor.py:43] - Generating content for 12 sections...
+2026-07-09 11:56:45 - agent_logger - INFO - [executor.py:47] - Generating section: Title Page
+2026-07-09 11:56:46 - agent_logger - INFO - [executor.py:47] - Generating section: Executive Summary
+2026-07-09 11:56:47 - agent_logger - INFO - [executor.py:47] - Generating section: Introduction
+2026-07-09 11:57:24 - agent_logger - INFO - [test_agent.py:77] - =========================================
+2026-07-09 11:57:24 - agent_logger - INFO - [test_agent.py:78] - TESTING VALIDATION RULES
+2026-07-09 11:57:24 - agent_logger - INFO - [test_agent.py:79] - =========================================
+2026-07-09 11:57:24 - agent_logger - WARNING - [app.py:46] - Validation error on /agent: [{'field': 'body.request', 'message': 'Value error, Request must not be empty or blank.'}]
+2026-07-09 11:57:24 - agent_logger - INFO - [test_agent.py:84] - Empty request status (expected 422): 422
+2026-07-09 11:57:24 - agent_logger - WARNING - [app.py:46] - Validation error on /agent: [{'field': 'body.request', 'message': 'Value error, Request is too short. Please provide a more descriptive prompt (minimum 10 characters).'}]
+2026-07-09 11:57:24 - agent_logger - INFO - [test_agent.py:90] - Short request status (expected 422): 422
+2026-07-09 11:57:24 - agent_logger - INFO - [test_agent.py:92] - Validation tests passed successfully.
+
+2026-07-09 11:57:24 - agent_logger - INFO - [test_agent.py:18] - =========================================
+2026-07-09 11:57:24 - agent_logger - INFO - [test_agent.py:19] - TESTING EXAMPLE 1: AI Chatbot Proposal
+2026-07-09 11:57:24 - agent_logger - INFO - [test_agent.py:20] - =========================================
+2026-07-09 11:57:24 - agent_logger - INFO - [routes.py:40] - Received API request: 'Generate a project proposal for implementing an AI chatbot for customer support.'
+2026-07-09 11:57:24 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 11:57:24 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 11:57:24 - agent_logger - INFO - [llm_factory.py:27] - Initializing Groq LLM Provider...
+2026-07-09 11:57:24 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 11:57:31 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Proposal
+2026-07-09 11:57:31 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Company Overview', 'Project Overview', 'Objectives', 'Background', 'Solution Overview', 'Implementation Plan', 'Timeline', 'Budget and Cost Structure', 'Conclusion']
+2026-07-09 11:57:31 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 11:57:31 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Proposal
+2026-07-09 11:57:48 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ['Assumption 1: The customer support chatbot will be integrated with an existing CRM system, which may require additional development and testing efforts.', 'Assumption 2: The chatbot will be designed to handle a minimum of 500 concurrent user sessions, which may impact the choice of cloud infrastructure and scalability requirements.', 'Assumption 3: The project timeline is approximately 12 weeks, which may be challenging to meet considering the complexity of AI chatbot development, testing, and deployment.', 'Assumption 4: The budget allocated for this project is $250,000, which may not be sufficient to cover the costs of hiring a dedicated AI/ML engineer, a full-time chatbot developer, and a project manager.', 'Assumption 5: The team size for this project will be 3-4 members, which may lead to knowledge silos and impact the overall project velocity, especially considering the technical complexity of AI chatbot development.', "Assumption 6: The organization has existing data governance policies and procedures in place, which will be leveraged to ensure the chatbot's data handling and storage comply with regulatory requirements."]
+2026-07-09 11:57:48 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 11:57:59 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand the request for a project proposal to implement an AI chatbot for customer support', 'Extract the objectives of the project, including improving customer satisfaction, reducing support costs, and enhancing the overall customer experience', 'Identify the document type as a Business Proposal', 'Determine the required sections for the proposal, including Title Page, Executive Summary, Company Overview, Project Overview, Objectives, Background, Solution Overview, Implementation Plan, Timeline, Budget and Cost Structure, and Conclusion', 'Create assumptions about the project, including the integration with an existing CRM system, handling concurrent user sessions, project timeline, budget, team size, and data governance policies', 'Generate an outline for the proposal, including an introduction, project description, objectives, background, solution overview, implementation plan, timeline, budget and cost structure, and conclusion', 'Research and gather information about AI chatbot development, testing, and deployment, including cloud infrastructure and scalability requirements', 'Develop a detailed implementation plan, including project milestones, timelines, and resource allocation', 'Estimate the budget and cost structure for the project, including personnel costs, infrastructure costs, and other expenses', 'Create a detailed timeline for the project, including key milestones and deadlines', 'Develop a solution overview, including the architecture and design of the AI chatbot, and its integration with the existing CRM system', 'Generate content for the proposal, including the introduction, project description, objectives, background, solution overview, implementation plan, timeline, budget and cost structure, and conclusion', 'Format the proposal according to the required sections and document type', 'Validate the proposal for completeness, accuracy, and consistency', 'Reflect on the proposal and identify areas for improvement, including the assumptions and potential risks', 'Revise and refine the proposal based on feedback and reflection', 'Finalize the proposal and prepare it for submission to stakeholders']
+2026-07-09 11:57:59 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 17 tasks sequentially.
+2026-07-09 11:57:59 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand the request for a project proposal to implement an AI chatbot for customer support
+2026-07-09 11:57:59 - agent_logger - INFO - [executor.py:35] - Task 'Understand the request for a project proposal to implement an AI chatbot for customer support' executed successfully.
+2026-07-09 11:57:59 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract the objectives of the project, including improving customer satisfaction, reducing support costs, and enhancing the overall customer experience
+2026-07-09 11:57:59 - agent_logger - INFO - [executor.py:35] - Task 'Extract the objectives of the project, including improving customer satisfaction, reducing support costs, and enhancing the overall customer experience' executed successfully.
+2026-07-09 11:57:59 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify the document type as a Business Proposal
+2026-07-09 11:57:59 - agent_logger - INFO - [executor.py:35] - Task 'Identify the document type as a Business Proposal' executed successfully.
+2026-07-09 11:57:59 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine the required sections for the proposal, including Title Page, Executive Summary, Company Overview, Project Overview, Objectives, Background, Solution Overview, Implementation Plan, Timeline, Budget and Cost Structure, and Conclusion
+2026-07-09 11:57:59 - agent_logger - INFO - [executor.py:35] - Task 'Determine the required sections for the proposal, including Title Page, Executive Summary, Company Overview, Project Overview, Objectives, Background, Solution Overview, Implementation Plan, Timeline, Budget and Cost Structure, and Conclusion' executed successfully.
+2026-07-09 11:57:59 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions about the project, including the integration with an existing CRM system, handling concurrent user sessions, project timeline, budget, team size, and data governance policies
+2026-07-09 11:57:59 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions about the project, including the integration with an existing CRM system, handling concurrent user sessions, project timeline, budget, team size, and data governance policies' executed successfully.
+2026-07-09 11:57:59 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate an outline for the proposal, including an introduction, project description, objectives, background, solution overview, implementation plan, timeline, budget and cost structure, and conclusion
+2026-07-09 11:57:59 - agent_logger - INFO - [executor.py:35] - Task 'Generate an outline for the proposal, including an introduction, project description, objectives, background, solution overview, implementation plan, timeline, budget and cost structure, and conclusion' executed successfully.
+2026-07-09 11:57:59 - agent_logger - INFO - [logger.py:82] - Executing Task 7: Research and gather information about AI chatbot development, testing, and deployment, including cloud infrastructure and scalability requirements
+2026-07-09 11:57:59 - agent_logger - INFO - [executor.py:35] - Task 'Research and gather information about AI chatbot development, testing, and deployment, including cloud infrastructure and scalability requirements' executed successfully.
+2026-07-09 11:57:59 - agent_logger - INFO - [logger.py:82] - Executing Task 8: Develop a detailed implementation plan, including project milestones, timelines, and resource allocation
+2026-07-09 11:57:59 - agent_logger - INFO - [executor.py:35] - Task 'Develop a detailed implementation plan, including project milestones, timelines, and resource allocation' executed successfully.
+2026-07-09 11:57:59 - agent_logger - INFO - [logger.py:82] - Executing Task 9: Estimate the budget and cost structure for the project, including personnel costs, infrastructure costs, and other expenses
+2026-07-09 11:57:59 - agent_logger - INFO - [executor.py:35] - Task 'Estimate the budget and cost structure for the project, including personnel costs, infrastructure costs, and other expenses' executed successfully.
+2026-07-09 11:57:59 - agent_logger - INFO - [logger.py:82] - Executing Task 10: Create a detailed timeline for the project, including key milestones and deadlines
+2026-07-09 11:57:59 - agent_logger - INFO - [executor.py:35] - Task 'Create a detailed timeline for the project, including key milestones and deadlines' executed successfully.
+2026-07-09 11:57:59 - agent_logger - INFO - [logger.py:82] - Executing Task 11: Develop a solution overview, including the architecture and design of the AI chatbot, and its integration with the existing CRM system
+2026-07-09 11:57:59 - agent_logger - INFO - [executor.py:35] - Task 'Develop a solution overview, including the architecture and design of the AI chatbot, and its integration with the existing CRM system' executed successfully.
+2026-07-09 11:57:59 - agent_logger - INFO - [logger.py:82] - Executing Task 12: Generate content for the proposal, including the introduction, project description, objectives, background, solution overview, implementation plan, timeline, budget and cost structure, and conclusion
+2026-07-09 11:57:59 - agent_logger - INFO - [executor.py:43] - Generating content for 11 sections...
+2026-07-09 11:57:59 - agent_logger - INFO - [executor.py:47] - Generating section: Title Page
+2026-07-09 11:58:00 - agent_logger - INFO - [executor.py:47] - Generating section: Executive Summary
+2026-07-09 11:59:21 - agent_logger - INFO - [test_agent.py:77] - =========================================
+2026-07-09 11:59:21 - agent_logger - INFO - [test_agent.py:78] - TESTING VALIDATION RULES
+2026-07-09 11:59:21 - agent_logger - INFO - [test_agent.py:79] - =========================================
+2026-07-09 11:59:21 - agent_logger - WARNING - [app.py:46] - Validation error on /agent: [{'field': 'body.request', 'message': 'Value error, Request must not be empty or blank.'}]
+2026-07-09 11:59:21 - agent_logger - INFO - [test_agent.py:84] - Empty request status (expected 422): 422
+2026-07-09 11:59:21 - agent_logger - WARNING - [app.py:46] - Validation error on /agent: [{'field': 'body.request', 'message': 'Value error, Request is too short. Please provide a more descriptive prompt (minimum 10 characters).'}]
+2026-07-09 11:59:21 - agent_logger - INFO - [test_agent.py:90] - Short request status (expected 422): 422
+2026-07-09 11:59:21 - agent_logger - INFO - [test_agent.py:92] - Validation tests passed successfully.
+
+2026-07-09 11:59:21 - agent_logger - INFO - [test_agent.py:18] - =========================================
+2026-07-09 11:59:21 - agent_logger - INFO - [test_agent.py:19] - TESTING EXAMPLE 1: AI Chatbot Proposal
+2026-07-09 11:59:21 - agent_logger - INFO - [test_agent.py:20] - =========================================
+2026-07-09 11:59:21 - agent_logger - INFO - [routes.py:40] - Received API request: 'Generate a project proposal for implementing an AI chatbot for customer support.'
+2026-07-09 11:59:21 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 11:59:21 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 11:59:21 - agent_logger - INFO - [llm_factory.py:27] - Initializing Groq LLM Provider...
+2026-07-09 11:59:21 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 11:59:21 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Proposal
+2026-07-09 11:59:21 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Company Overview', 'Project Description', 'Objectives', 'Background', 'Methodology', 'Implementation Plan', 'Timeline', 'Budget and Cost Structure', 'Conclusion']
+2026-07-09 11:59:21 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 11:59:21 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Proposal
+2026-07-09 11:59:22 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ['Assumption 1: The project timeline is approximately 12-16 weeks, assuming a team size of 4-6 members with a mix of technical and business expertise, and a moderate level of complexity for the AI chatbot implementation.', 'Assumption 2: The budget for this project is estimated to be between $250,000 to $400,000, which includes costs for personnel, infrastructure, software licenses, and training data, but does not account for ongoing maintenance and support expenses.', 'Assumption 3: The technical stack for the AI chatbot will be based on a cloud-based platform (e.g., AWS, Google Cloud, or Microsoft Azure) with a natural language processing (NLP) library (e.g., Dialogflow, Rasa, or IBM Watson Assistant), and will integrate with the existing customer support system.', 'Assumption 4: The organization has a dedicated customer support team with a clear understanding of the current pain points and requirements for the AI chatbot, and is committed to providing necessary resources and support throughout the project.', 'Assumption 5: The project will prioritize the development of a basic chatbot functionality with a gradual rollout to a small group of customers, followed by a phased expansion to the broader customer base, allowing for iterative improvements and refinements based on user feedback.', 'Assumption 6: The organization has a data governance policy in place to ensure the collection, storage, and use of customer data for training and improving the AI chatbot, and will comply with relevant data protection regulations (e.g., GDPR, CCPA).']
+2026-07-09 11:59:22 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 11:59:23 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand the project proposal request for implementing an AI chatbot for customer support, including the objectives and requirements.', 'Extract the key objectives of the project proposal, such as improving customer support, increasing efficiency, and enhancing the overall customer experience.', 'Identify the document type as a Business Proposal and confirm the required sections, including Title Page, Executive Summary, Company Overview, Project Description, Objectives, Background, Methodology, Implementation Plan, Timeline, Budget and Cost Structure, and Conclusion.', 'Determine the required content for each section, including the project description, objectives, background, methodology, implementation plan, timeline, budget, and conclusion.', 'Create a list of assumptions, including the project timeline, budget, technical stack, integration with the existing customer support system, data governance policy, and phased rollout plan.', 'Generate an outline for the project proposal, including the required sections and content.', 'Research and gather information on the technical stack, including cloud-based platforms and NLP libraries, to support the project proposal.', 'Develop a detailed implementation plan, including the project timeline, milestones, and key performance indicators (KPIs).', 'Create a budget and cost structure for the project, including personnel, infrastructure, software licenses, training data, and ongoing maintenance and support expenses.', 'Write the content for each section of the project proposal, including the executive summary, company overview, project description, objectives, background, methodology, implementation plan, timeline, budget, and conclusion.', 'Format the project proposal document, including the title page, headings, subheadings, and visual aids.', 'Validate the project proposal document for completeness, accuracy, and consistency.', 'Reflect on the project proposal and identify areas for improvement, including the assumptions, implementation plan, and budget.']
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 13 tasks sequentially.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand the project proposal request for implementing an AI chatbot for customer support, including the objectives and requirements.
+2026-07-09 11:59:23 - agent_logger - INFO - [executor.py:35] - Task 'Understand the project proposal request for implementing an AI chatbot for customer support, including the objectives and requirements.' executed successfully.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract the key objectives of the project proposal, such as improving customer support, increasing efficiency, and enhancing the overall customer experience.
+2026-07-09 11:59:23 - agent_logger - INFO - [executor.py:35] - Task 'Extract the key objectives of the project proposal, such as improving customer support, increasing efficiency, and enhancing the overall customer experience.' executed successfully.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify the document type as a Business Proposal and confirm the required sections, including Title Page, Executive Summary, Company Overview, Project Description, Objectives, Background, Methodology, Implementation Plan, Timeline, Budget and Cost Structure, and Conclusion.
+2026-07-09 11:59:23 - agent_logger - INFO - [executor.py:35] - Task 'Identify the document type as a Business Proposal and confirm the required sections, including Title Page, Executive Summary, Company Overview, Project Description, Objectives, Background, Methodology, Implementation Plan, Timeline, Budget and Cost Structure, and Conclusion.' executed successfully.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine the required content for each section, including the project description, objectives, background, methodology, implementation plan, timeline, budget, and conclusion.
+2026-07-09 11:59:23 - agent_logger - INFO - [executor.py:35] - Task 'Determine the required content for each section, including the project description, objectives, background, methodology, implementation plan, timeline, budget, and conclusion.' executed successfully.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create a list of assumptions, including the project timeline, budget, technical stack, integration with the existing customer support system, data governance policy, and phased rollout plan.
+2026-07-09 11:59:23 - agent_logger - INFO - [executor.py:35] - Task 'Create a list of assumptions, including the project timeline, budget, technical stack, integration with the existing customer support system, data governance policy, and phased rollout plan.' executed successfully.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate an outline for the project proposal, including the required sections and content.
+2026-07-09 11:59:23 - agent_logger - INFO - [executor.py:35] - Task 'Generate an outline for the project proposal, including the required sections and content.' executed successfully.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:82] - Executing Task 7: Research and gather information on the technical stack, including cloud-based platforms and NLP libraries, to support the project proposal.
+2026-07-09 11:59:23 - agent_logger - INFO - [executor.py:35] - Task 'Research and gather information on the technical stack, including cloud-based platforms and NLP libraries, to support the project proposal.' executed successfully.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:82] - Executing Task 8: Develop a detailed implementation plan, including the project timeline, milestones, and key performance indicators (KPIs).
+2026-07-09 11:59:23 - agent_logger - INFO - [executor.py:35] - Task 'Develop a detailed implementation plan, including the project timeline, milestones, and key performance indicators (KPIs).' executed successfully.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:82] - Executing Task 9: Create a budget and cost structure for the project, including personnel, infrastructure, software licenses, training data, and ongoing maintenance and support expenses.
+2026-07-09 11:59:23 - agent_logger - INFO - [executor.py:35] - Task 'Create a budget and cost structure for the project, including personnel, infrastructure, software licenses, training data, and ongoing maintenance and support expenses.' executed successfully.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:82] - Executing Task 10: Write the content for each section of the project proposal, including the executive summary, company overview, project description, objectives, background, methodology, implementation plan, timeline, budget, and conclusion.
+2026-07-09 11:59:23 - agent_logger - INFO - [executor.py:35] - Task 'Write the content for each section of the project proposal, including the executive summary, company overview, project description, objectives, background, methodology, implementation plan, timeline, budget, and conclusion.' executed successfully.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:82] - Executing Task 11: Format the project proposal document, including the title page, headings, subheadings, and visual aids.
+2026-07-09 11:59:23 - agent_logger - INFO - [executor.py:35] - Task 'Format the project proposal document, including the title page, headings, subheadings, and visual aids.' executed successfully.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:82] - Executing Task 12: Validate the project proposal document for completeness, accuracy, and consistency.
+2026-07-09 11:59:23 - agent_logger - INFO - [executor.py:30] - Initiating structural and file presence checks.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:82] - Executing Task 13: Reflect on the project proposal and identify areas for improvement, including the assumptions, implementation plan, and budget.
+2026-07-09 11:59:23 - agent_logger - INFO - [executor.py:32] - Readying quality assurance (QA) reflection pipeline.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:70] - [STEP] Document Generation - Compiling markdown to styled Word Document.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-07-09 11:59:23 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/business_proposal_1783578563.docx
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:70] - [STEP] Reflection Phase - Auditing document quality with LLM Self-Check.
+2026-07-09 11:59:23 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-07-09 11:59:29 - agent_logger - INFO - [reflection.py:41] - Reflection complete. Status: FAIL. Missing: ['Executive Summary', 'Problem Statement', 'Solution Overview', 'Technical Requirements', 'Project Schedule', 'Budget and Cost Breakdown', 'Risks and Mitigation Strategies', 'Conclusion']
+2026-07-09 11:59:29 - agent_logger - INFO - [logger.py:70] - [STEP] Regeneration Loop - Document failed check. Regenerating sections: ['Executive Summary', 'Problem Statement', 'Solution Overview', 'Technical Requirements', 'Project Schedule', 'Budget and Cost Breakdown', 'Risks and Mitigation Strategies', 'Conclusion']
+2026-07-09 11:59:29 - agent_logger - INFO - [executor.py:72] - Regenerating failed sections: ['Executive Summary', 'Problem Statement', 'Solution Overview', 'Technical Requirements', 'Project Schedule', 'Budget and Cost Breakdown', 'Risks and Mitigation Strategies', 'Conclusion']
+2026-07-09 11:59:29 - agent_logger - INFO - [executor.py:75] - Regenerating section: Executive Summary
+2026-07-09 11:59:29 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Executive Summary
+2026-07-09 11:59:29 - agent_logger - INFO - [executor.py:75] - Regenerating section: Problem Statement
+2026-07-09 11:59:50 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Problem Statement
+2026-07-09 11:59:50 - agent_logger - INFO - [executor.py:75] - Regenerating section: Solution Overview
+2026-07-09 12:00:05 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Solution Overview
+2026-07-09 12:00:05 - agent_logger - INFO - [executor.py:75] - Regenerating section: Technical Requirements
+2026-07-09 12:00:06 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Technical Requirements
+2026-07-09 12:00:06 - agent_logger - INFO - [executor.py:75] - Regenerating section: Project Schedule
+2026-07-09 12:00:39 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Project Schedule
+2026-07-09 12:00:39 - agent_logger - INFO - [executor.py:75] - Regenerating section: Budget and Cost Breakdown
+2026-07-09 12:00:55 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Budget and Cost Breakdown
+2026-07-09 12:00:55 - agent_logger - INFO - [executor.py:75] - Regenerating section: Risks and Mitigation Strategies
+2026-07-09 12:01:11 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Risks and Mitigation Strategies
+2026-07-09 12:01:11 - agent_logger - INFO - [executor.py:75] - Regenerating section: Conclusion
+2026-07-09 12:01:28 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Conclusion
+2026-07-09 12:01:28 - agent_logger - INFO - [workflow.py:72] - Re-generating final Word Document with updated sections.
+2026-07-09 12:01:28 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-07-09 12:01:28 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/business_proposal_1783578563.docx
+2026-07-09 12:01:28 - agent_logger - INFO - [workflow.py:81] - Running post-regeneration sanity check.
+2026-07-09 12:01:28 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-07-09 12:01:28 - agent_logger - WARNING - [groq_client.py:49] - Groq generation failed with model llama-3.1-8b-instant: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.1-8b-instant` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 9476, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:01:28 - agent_logger - WARNING - [groq_client.py:49] - Groq generation failed with model llama-3.3-70b-versatile: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 96259, Requested 7168. Please try again in 49m20.928s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:01:28 - agent_logger - WARNING - [groq_client.py:49] - Groq generation failed with model mixtral-8x7b-32768: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Trying next model...
+2026-07-09 12:01:28 - agent_logger - ERROR - [reflection.py:47] - Reflection LLM query failed: All Groq models failed. Last error: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Defaulting to PASS.
+2026-07-09 12:01:28 - agent_logger - INFO - [logger.py:70] - [STEP] Verification - Validating final document file status.
+2026-07-09 12:01:28 - agent_logger - INFO - [validator.py:17] - Validation succeeded: File generated_docs/business_proposal_1783578563.docx exists and is 45578 bytes.
+2026-07-09 12:01:28 - agent_logger - INFO - [workflow.py:134] - Generating final brief document summary...
+2026-07-09 12:01:28 - agent_logger - INFO - [logger.py:94] - Execution completed successfully.
+2026-07-09 12:01:28 - agent_logger - INFO - [test_agent.py:28] - Response Status Code: 200
+2026-07-09 12:01:28 - agent_logger - INFO - [test_agent.py:32] - Response JSON keys: ['status', 'summary', 'execution_plan', 'completed_tasks', 'document_path', 'document_location', 'assumptions', 'reflection_result', 'execution_time']
+2026-07-09 12:01:28 - agent_logger - INFO - [test_agent.py:33] - Execution Time: 127.30 seconds
+2026-07-09 12:01:28 - agent_logger - INFO - [test_agent.py:34] - Document Saved At: generated_docs/business_proposal_1783578563.docx
+2026-07-09 12:01:28 - agent_logger - INFO - [test_agent.py:45] - Example 1 passed successfully.
+
+2026-07-09 12:01:28 - agent_logger - INFO - [test_agent.py:49] - =========================================
+2026-07-09 12:01:28 - agent_logger - INFO - [test_agent.py:50] - TESTING EXAMPLE 2: ERP Legacy Migration
+2026-07-09 12:01:28 - agent_logger - INFO - [test_agent.py:51] - =========================================
+2026-07-09 12:01:28 - agent_logger - INFO - [routes.py:40] - Received API request: 'We need a technical implementation plan for migrating our legacy monolithic ERP to microservices in six months with a small engineering team and uncertain budget. Make reasonable assumptions.'
+2026-07-09 12:01:28 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 12:01:28 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 12:01:28 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 12:01:41 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Implementation Roadmap
+2026-07-09 12:01:41 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Assumptions', 'Background', 'Current State', 'Target State', 'Migration Strategy', 'Implementation Plan', 'Risks & Mitigations', 'Timeline', 'Budget Estimation', 'Conclusion']
+2026-07-09 12:01:41 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 12:01:41 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Implementation Roadmap
+2026-07-09 12:01:43 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ['Assumption 1: The legacy monolithic ERP system has a well-documented architecture and a clear understanding of its current functionality, allowing for a smooth transition to microservices.', 'Assumption 2: The small engineering team has the necessary skills and expertise to handle the migration, including experience with microservices architecture, containerization, and cloud infrastructure.', 'Assumption 3: The budget for the migration is sufficient to cover the costs of hiring additional resources, training, and infrastructure upgrades, and is not subject to significant changes during the six-month timeline.', 'Assumption 4: The organization has a clear understanding of the business requirements and priorities for the migration, allowing for a focused approach to the most critical components and features.', 'Assumption 5: The existing infrastructure and network architecture can support the increased complexity and scalability of a microservices-based system, without requiring significant upgrades or changes.', 'Assumption 6: The team will have access to necessary testing and staging environments, as well as a clear plan for testing and validation of the new microservices-based system before deployment to production.']
+2026-07-09 12:01:43 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 12:01:51 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand the request for a technical implementation plan to migrate the legacy monolithic ERP to microservices within six months with a small engineering team and uncertain budget.', 'Extract the objectives of the implementation plan, including the key deliverables and success criteria.', 'Identify the document type as an Implementation Roadmap.', 'Determine the required sections for the Implementation Roadmap, including Title Page, Executive Summary, Assumptions, Background, Current State, Target State, Migration Strategy, Implementation Plan, Risks & Mitigations, Timeline, Budget Estimation, and Conclusion.', 'Create assumptions for the implementation plan, including the well-documented architecture of the legacy ERP system, the necessary skills and expertise of the small engineering team, sufficient budget for hiring additional resources and infrastructure upgrades, clear understanding of business requirements and priorities, existing infrastructure support for microservices-based system, and access to necessary testing and staging environments.', 'Generate an outline for the Implementation Roadmap, including the required sections and key deliverables.', 'Research and gather information on the current state of the legacy ERP system, including its architecture, functionality, and any existing documentation.', 'Research and gather information on the target state of the microservices-based system, including its architecture, functionality, and any existing documentation.', 'Develop a migration strategy for the implementation plan, including the approach to migrating the legacy ERP system to microservices, the tools and technologies to be used, and the timeline for the migration.', 'Create a detailed implementation plan for the migration, including the tasks, milestones, and deadlines for the small engineering team.', 'Identify and document the risks associated with the migration, including technical, operational, and financial risks, and develop mitigations for each risk.', 'Develop a timeline for the implementation plan, including key milestones and deadlines for the small engineering team.', 'Estimate the budget for the migration, including the costs of hiring additional resources, training, and infrastructure upgrades.', 'Validate the Implementation Roadmap with stakeholders, including the small engineering team, management, and other relevant parties.', 'Format the Implementation Roadmap document according to the required sections and style guidelines.', 'Reflect on the implementation plan and identify areas for improvement, including any lessons learned and best practices for future migrations.']
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 16 tasks sequentially.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand the request for a technical implementation plan to migrate the legacy monolithic ERP to microservices within six months with a small engineering team and uncertain budget.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:35] - Task 'Understand the request for a technical implementation plan to migrate the legacy monolithic ERP to microservices within six months with a small engineering team and uncertain budget.' executed successfully.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract the objectives of the implementation plan, including the key deliverables and success criteria.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:35] - Task 'Extract the objectives of the implementation plan, including the key deliverables and success criteria.' executed successfully.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify the document type as an Implementation Roadmap.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:35] - Task 'Identify the document type as an Implementation Roadmap.' executed successfully.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine the required sections for the Implementation Roadmap, including Title Page, Executive Summary, Assumptions, Background, Current State, Target State, Migration Strategy, Implementation Plan, Risks & Mitigations, Timeline, Budget Estimation, and Conclusion.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:35] - Task 'Determine the required sections for the Implementation Roadmap, including Title Page, Executive Summary, Assumptions, Background, Current State, Target State, Migration Strategy, Implementation Plan, Risks & Mitigations, Timeline, Budget Estimation, and Conclusion.' executed successfully.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions for the implementation plan, including the well-documented architecture of the legacy ERP system, the necessary skills and expertise of the small engineering team, sufficient budget for hiring additional resources and infrastructure upgrades, clear understanding of business requirements and priorities, existing infrastructure support for microservices-based system, and access to necessary testing and staging environments.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions for the implementation plan, including the well-documented architecture of the legacy ERP system, the necessary skills and expertise of the small engineering team, sufficient budget for hiring additional resources and infrastructure upgrades, clear understanding of business requirements and priorities, existing infrastructure support for microservices-based system, and access to necessary testing and staging environments.' executed successfully.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate an outline for the Implementation Roadmap, including the required sections and key deliverables.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:35] - Task 'Generate an outline for the Implementation Roadmap, including the required sections and key deliverables.' executed successfully.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 7: Research and gather information on the current state of the legacy ERP system, including its architecture, functionality, and any existing documentation.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:35] - Task 'Research and gather information on the current state of the legacy ERP system, including its architecture, functionality, and any existing documentation.' executed successfully.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 8: Research and gather information on the target state of the microservices-based system, including its architecture, functionality, and any existing documentation.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:35] - Task 'Research and gather information on the target state of the microservices-based system, including its architecture, functionality, and any existing documentation.' executed successfully.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 9: Develop a migration strategy for the implementation plan, including the approach to migrating the legacy ERP system to microservices, the tools and technologies to be used, and the timeline for the migration.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:35] - Task 'Develop a migration strategy for the implementation plan, including the approach to migrating the legacy ERP system to microservices, the tools and technologies to be used, and the timeline for the migration.' executed successfully.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 10: Create a detailed implementation plan for the migration, including the tasks, milestones, and deadlines for the small engineering team.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:35] - Task 'Create a detailed implementation plan for the migration, including the tasks, milestones, and deadlines for the small engineering team.' executed successfully.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 11: Identify and document the risks associated with the migration, including technical, operational, and financial risks, and develop mitigations for each risk.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:35] - Task 'Identify and document the risks associated with the migration, including technical, operational, and financial risks, and develop mitigations for each risk.' executed successfully.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 12: Develop a timeline for the implementation plan, including key milestones and deadlines for the small engineering team.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:35] - Task 'Develop a timeline for the implementation plan, including key milestones and deadlines for the small engineering team.' executed successfully.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 13: Estimate the budget for the migration, including the costs of hiring additional resources, training, and infrastructure upgrades.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:35] - Task 'Estimate the budget for the migration, including the costs of hiring additional resources, training, and infrastructure upgrades.' executed successfully.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 14: Validate the Implementation Roadmap with stakeholders, including the small engineering team, management, and other relevant parties.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:30] - Initiating structural and file presence checks.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 15: Format the Implementation Roadmap document according to the required sections and style guidelines.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:35] - Task 'Format the Implementation Roadmap document according to the required sections and style guidelines.' executed successfully.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:82] - Executing Task 16: Reflect on the implementation plan and identify areas for improvement, including any lessons learned and best practices for future migrations.
+2026-07-09 12:01:51 - agent_logger - INFO - [executor.py:32] - Readying quality assurance (QA) reflection pipeline.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:70] - [STEP] Document Generation - Compiling markdown to styled Word Document.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-07-09 12:01:51 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/implementation_roadmap_1783578711.docx
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:70] - [STEP] Reflection Phase - Auditing document quality with LLM Self-Check.
+2026-07-09 12:01:51 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-07-09 12:02:02 - agent_logger - INFO - [reflection.py:41] - Reflection complete. Status: FAIL. Missing: ['Detailed project timeline with milestones and deadlines', 'Resource allocation plan, including roles and responsibilities', 'Risk management plan, including potential risks and mitigation strategies', 'Budget breakdown and cost estimation', 'Testing and validation plan, including testing types and frequencies', 'Deployment plan, including roll-out strategy and rollback plan']
+2026-07-09 12:02:02 - agent_logger - INFO - [logger.py:70] - [STEP] Regeneration Loop - Document failed check. Regenerating sections: ['Detailed project timeline with milestones and deadlines', 'Resource allocation plan, including roles and responsibilities', 'Risk management plan, including potential risks and mitigation strategies', 'Budget breakdown and cost estimation', 'Testing and validation plan, including testing types and frequencies', 'Deployment plan, including roll-out strategy and rollback plan']
+2026-07-09 12:02:02 - agent_logger - INFO - [executor.py:72] - Regenerating failed sections: ['Detailed project timeline with milestones and deadlines', 'Resource allocation plan, including roles and responsibilities', 'Risk management plan, including potential risks and mitigation strategies', 'Budget breakdown and cost estimation', 'Testing and validation plan, including testing types and frequencies', 'Deployment plan, including roll-out strategy and rollback plan']
+2026-07-09 12:02:02 - agent_logger - INFO - [executor.py:75] - Regenerating section: Detailed project timeline with milestones and deadlines
+2026-07-09 12:02:11 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Detailed project timeline with milestones and deadlines
+2026-07-09 12:02:11 - agent_logger - INFO - [executor.py:75] - Regenerating section: Resource allocation plan, including roles and responsibilities
+2026-07-09 12:02:36 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Resource allocation plan, including roles and responsibilities
+2026-07-09 12:02:36 - agent_logger - INFO - [executor.py:75] - Regenerating section: Risk management plan, including potential risks and mitigation strategies
+2026-07-09 12:05:24 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 12:05:24 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 12:05:24 - agent_logger - INFO - [llm_factory.py:27] - Initializing Groq LLM Provider...
+2026-07-09 12:05:24 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 12:06:03 - agent_logger - WARNING - [groq_client.py:50] - Groq generation failed with model llama-3.1-8b-instant: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 2521, Requested 4054. Please try again in 5.75s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:06:03 - agent_logger - WARNING - [groq_client.py:50] - Groq generation failed with model llama-3.3-70b-versatile: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95941, Requested 4388. Please try again in 4m44.256s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:06:03 - agent_logger - WARNING - [groq_client.py:50] - Groq generation failed with model gemma2-9b-it: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Trying next model...
+2026-07-09 12:06:03 - agent_logger - ERROR - [planner.py:31] - Intent analysis LLM query failed: All Groq models failed. Last error: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Using generic fallback.
+2026-07-09 12:06:03 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Report
+2026-07-09 12:06:03 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Executive Summary', 'Objectives', 'Background', 'Main Content', 'Recommendations', 'Risks & Mitigations', 'Timeline', 'Conclusion']
+2026-07-09 12:06:03 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 12:06:03 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Report
+2026-07-09 12:06:04 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ['Assumption 1: The e-commerce company has a clear understanding of its customer support pain points and goals for implementing the AI-powered chatbot, including key performance indicators (KPIs) for success.', 'Assumption 2: The company has a dedicated team with the necessary skills and expertise to develop, deploy, and maintain the chatbot, including data scientists, software developers, and quality assurance engineers.', "Assumption 3: The company has access to a large dataset of customer interactions, including chat logs, emails, and social media conversations, to train and fine-tune the chatbot's AI model.", "Assumption 4: The company has a robust IT infrastructure, including a scalable cloud platform, to support the chatbot's deployment and integration with existing systems, such as customer relationship management (CRM) and order management systems.", 'Assumption 5: The company has a clear plan for handling customer escalations and complex issues that may require human intervention, including a process for routing customers to human support agents.', 'Assumption 6: The company has a budget allocated for the development, deployment, and ongoing maintenance of the chatbot, including costs for data scientists, software developers, and cloud infrastructure.']
+2026-07-09 12:06:04 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 12:06:05 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand request and requirements for the AI-powered customer support chatbot project', 'Extract specific objectives for the project, including KPIs for success', "Identify and document the e-commerce company's customer support pain points and goals", 'Determine the required sections for the business report, including any additional sections that may be necessary', 'Create and document the assumptions for the project, including the provided assumptions', 'Research and gather information on the current state of AI-powered chatbots in e-commerce customer support', 'Generate an outline for the business report, including the required sections and any additional sections', 'Research and gather information on the technical requirements for implementing the AI-powered chatbot, including data scientists, software developers, and quality assurance engineers', 'Research and gather information on the IT infrastructure requirements for the chatbot, including a scalable cloud platform and integration with existing systems', 'Research and gather information on the budget and resource allocation for the project', 'Generate content for the business report, including the executive summary, objectives, background, main content, recommendations, risks & mitigations, timeline, and conclusion', "Format the business report according to the e-commerce company's style guide and branding", 'Validate the business report for accuracy, completeness, and consistency', 'Reflect on the project plan and identify areas for improvement', 'Update the assumptions and project plan based on feedback from stakeholders and subject matter experts', 'Finalize the business report and submit it to the e-commerce company for review and approval']
+2026-07-09 12:06:05 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 16 tasks sequentially.
+2026-07-09 12:06:05 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand request and requirements for the AI-powered customer support chatbot project
+2026-07-09 12:06:05 - agent_logger - INFO - [executor.py:35] - Task 'Understand request and requirements for the AI-powered customer support chatbot project' executed successfully.
+2026-07-09 12:06:05 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract specific objectives for the project, including KPIs for success
+2026-07-09 12:06:05 - agent_logger - INFO - [executor.py:35] - Task 'Extract specific objectives for the project, including KPIs for success' executed successfully.
+2026-07-09 12:06:05 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify and document the e-commerce company's customer support pain points and goals
+2026-07-09 12:06:05 - agent_logger - INFO - [executor.py:35] - Task 'Identify and document the e-commerce company's customer support pain points and goals' executed successfully.
+2026-07-09 12:06:05 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine the required sections for the business report, including any additional sections that may be necessary
+2026-07-09 12:06:05 - agent_logger - INFO - [executor.py:35] - Task 'Determine the required sections for the business report, including any additional sections that may be necessary' executed successfully.
+2026-07-09 12:06:05 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create and document the assumptions for the project, including the provided assumptions
+2026-07-09 12:06:05 - agent_logger - INFO - [executor.py:35] - Task 'Create and document the assumptions for the project, including the provided assumptions' executed successfully.
+2026-07-09 12:06:05 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Research and gather information on the current state of AI-powered chatbots in e-commerce customer support
+2026-07-09 12:06:05 - agent_logger - INFO - [executor.py:35] - Task 'Research and gather information on the current state of AI-powered chatbots in e-commerce customer support' executed successfully.
+2026-07-09 12:06:05 - agent_logger - INFO - [logger.py:82] - Executing Task 7: Generate an outline for the business report, including the required sections and any additional sections
+2026-07-09 12:06:05 - agent_logger - INFO - [executor.py:35] - Task 'Generate an outline for the business report, including the required sections and any additional sections' executed successfully.
+2026-07-09 12:06:05 - agent_logger - INFO - [logger.py:82] - Executing Task 8: Research and gather information on the technical requirements for implementing the AI-powered chatbot, including data scientists, software developers, and quality assurance engineers
+2026-07-09 12:06:05 - agent_logger - INFO - [executor.py:35] - Task 'Research and gather information on the technical requirements for implementing the AI-powered chatbot, including data scientists, software developers, and quality assurance engineers' executed successfully.
+2026-07-09 12:06:05 - agent_logger - INFO - [logger.py:82] - Executing Task 9: Research and gather information on the IT infrastructure requirements for the chatbot, including a scalable cloud platform and integration with existing systems
+2026-07-09 12:06:05 - agent_logger - INFO - [executor.py:35] - Task 'Research and gather information on the IT infrastructure requirements for the chatbot, including a scalable cloud platform and integration with existing systems' executed successfully.
+2026-07-09 12:06:05 - agent_logger - INFO - [logger.py:82] - Executing Task 10: Research and gather information on the budget and resource allocation for the project
+2026-07-09 12:06:05 - agent_logger - INFO - [executor.py:35] - Task 'Research and gather information on the budget and resource allocation for the project' executed successfully.
+2026-07-09 12:06:05 - agent_logger - INFO - [logger.py:82] - Executing Task 11: Generate content for the business report, including the executive summary, objectives, background, main content, recommendations, risks & mitigations, timeline, and conclusion
+2026-07-09 12:06:05 - agent_logger - INFO - [executor.py:43] - Generating content for 8 sections...
+2026-07-09 12:06:05 - agent_logger - INFO - [executor.py:47] - Generating section: Executive Summary
+2026-07-09 12:06:30 - agent_logger - INFO - [executor.py:47] - Generating section: Objectives
+2026-07-09 12:07:19 - agent_logger - INFO - [executor.py:47] - Generating section: Background
+2026-07-09 12:07:40 - agent_logger - INFO - [executor.py:47] - Generating section: Main Content
+2026-07-09 12:07:42 - agent_logger - INFO - [executor.py:47] - Generating section: Recommendations
+2026-07-09 12:07:42 - agent_logger - WARNING - [groq_client.py:50] - Groq generation failed with model llama-3.1-8b-instant: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.1-8b-instant` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 7034, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:07:42 - agent_logger - WARNING - [groq_client.py:50] - Groq generation failed with model llama-3.3-70b-versatile: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95827, Requested 7034. Please try again in 41m11.904s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:07:42 - agent_logger - WARNING - [groq_client.py:50] - Groq generation failed with model gemma2-9b-it: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Trying next model...
+2026-07-09 12:07:42 - agent_logger - ERROR - [executor.py:64] - Failed to generate section Recommendations: All Groq models failed. Last error: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-07-09 12:07:42 - agent_logger - INFO - [executor.py:47] - Generating section: Risks & Mitigations
+2026-07-09 12:08:10 - agent_logger - WARNING - [groq_client.py:50] - Groq generation failed with model llama-3.1-8b-instant: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.1-8b-instant` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 6885, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:08:10 - agent_logger - WARNING - [groq_client.py:50] - Groq generation failed with model llama-3.3-70b-versatile: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95794, Requested 7042. Please try again in 40m50.304s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:08:10 - agent_logger - WARNING - [groq_client.py:50] - Groq generation failed with model gemma2-9b-it: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Trying next model...
+2026-07-09 12:08:10 - agent_logger - ERROR - [executor.py:64] - Failed to generate section Risks & Mitigations: All Groq models failed. Last error: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-07-09 12:08:10 - agent_logger - INFO - [executor.py:47] - Generating section: Timeline
+2026-07-09 12:08:50 - agent_logger - INFO - [executor.py:47] - Generating section: Conclusion
+2026-07-09 12:09:29 - agent_logger - INFO - [logger.py:82] - Executing Task 12: Format the business report according to the e-commerce company's style guide and branding
+2026-07-09 12:09:29 - agent_logger - INFO - [executor.py:35] - Task 'Format the business report according to the e-commerce company's style guide and branding' executed successfully.
+2026-07-09 12:09:29 - agent_logger - INFO - [logger.py:82] - Executing Task 13: Validate the business report for accuracy, completeness, and consistency
+2026-07-09 12:09:29 - agent_logger - INFO - [executor.py:30] - Initiating structural and file presence checks.
+2026-07-09 12:09:29 - agent_logger - INFO - [logger.py:82] - Executing Task 14: Reflect on the project plan and identify areas for improvement
+2026-07-09 12:09:29 - agent_logger - INFO - [executor.py:32] - Readying quality assurance (QA) reflection pipeline.
+2026-07-09 12:09:29 - agent_logger - INFO - [logger.py:82] - Executing Task 15: Update the assumptions and project plan based on feedback from stakeholders and subject matter experts
+2026-07-09 12:09:29 - agent_logger - INFO - [executor.py:35] - Task 'Update the assumptions and project plan based on feedback from stakeholders and subject matter experts' executed successfully.
+2026-07-09 12:09:29 - agent_logger - INFO - [logger.py:82] - Executing Task 16: Finalize the business report and submit it to the e-commerce company for review and approval
+2026-07-09 12:09:29 - agent_logger - INFO - [executor.py:35] - Task 'Finalize the business report and submit it to the e-commerce company for review and approval' executed successfully.
+2026-07-09 12:09:29 - agent_logger - INFO - [logger.py:70] - [STEP] Document Generation - Compiling markdown to styled Word Document.
+2026-07-09 12:09:29 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-07-09 12:09:29 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/business_report_1783579169.docx
+2026-07-09 12:09:29 - agent_logger - INFO - [logger.py:70] - [STEP] Reflection Phase - Auditing document quality with LLM Self-Check.
+2026-07-09 12:09:29 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-07-09 12:10:21 - agent_logger - WARNING - [groq_client.py:50] - Groq generation failed with model llama-3.1-8b-instant: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.1-8b-instant` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 8446, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:10:21 - agent_logger - WARNING - [groq_client.py:50] - Groq generation failed with model llama-3.3-70b-versatile: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95642, Requested 8603. Please try again in 1h1m7.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:10:21 - agent_logger - WARNING - [groq_client.py:50] - Groq generation failed with model gemma2-9b-it: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Trying next model...
+2026-07-09 12:10:21 - agent_logger - ERROR - [reflection.py:47] - Reflection LLM query failed: All Groq models failed. Last error: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}. Defaulting to PASS.
+2026-07-09 12:10:21 - agent_logger - INFO - [logger.py:70] - [STEP] Verification - Validating final document file status.
+2026-07-09 12:10:21 - agent_logger - INFO - [validator.py:17] - Validation succeeded: File generated_docs/business_report_1783579169.docx exists and is 43585 bytes.
+2026-07-09 12:10:21 - agent_logger - INFO - [workflow.py:134] - Generating final brief document summary...
+2026-07-09 12:10:44 - agent_logger - INFO - [logger.py:94] - Execution completed successfully.
+2026-07-09 12:13:57 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 12:13:57 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 12:13:57 - agent_logger - INFO - [llm_factory.py:27] - Initializing Groq LLM Provider...
+2026-07-09 12:13:57 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 12:13:57 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Proposal
+2026-07-09 12:13:57 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Company Overview', 'Problem Statement', 'Solution Overview', 'Key Features and Benefits', 'Implementation Plan', 'Timeline', 'Budget and Resource Allocation', 'Conclusion']
+2026-07-09 12:13:57 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 12:13:57 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Proposal
+2026-07-09 12:13:58 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ['Assumption 1: The e-commerce company has a well-defined customer support process and a clear understanding of their customer pain points, which will be essential for training the AI-powered chatbot.', 'Assumption 2: The company has a sufficient amount of historical customer interaction data to train the chatbot, and this data is easily accessible and in a suitable format.', 'Assumption 3: The technical team has experience with integrating AI-powered chatbots with e-commerce platforms, and they will be able to handle any technical complexities that arise during implementation.', 'Assumption 4: The company has a dedicated team of 2-3 developers, 1-2 data scientists, and 1 project manager to work on this project, which will ensure timely completion and minimize the risk of delays.', 'Assumption 5: The company has a budget of at least $200,000 to cover the costs of development, training, and deployment of the chatbot, as well as ongoing maintenance and support.', "Assumption 6: The company's e-commerce platform is compatible with the chosen technical stack, and any necessary integrations or customizations can be completed within the project timeline."]
+2026-07-09 12:13:58 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 12:14:02 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand the request and requirements for the AI-powered customer support chatbot project proposal', 'Extract the project objectives, such as improving customer satisfaction, reducing support costs, and increasing sales', 'Identify the document type as a Business Proposal', 'Determine the required sections for the proposal, including Title Page, Executive Summary, Company Overview, Problem Statement, Solution Overview, Key Features and Benefits, Implementation Plan, Timeline, Budget and Resource Allocation, and Conclusion', "Create assumptions about the project, including the e-commerce company's customer support process, historical customer interaction data, technical team experience, project team composition, budget, and technical stack compatibility", 'Generate an outline for the proposal, including an introduction, problem statement, solution overview, key features and benefits, implementation plan, timeline, budget and resource allocation, and conclusion', "Research and gather information about the e-commerce company's customer support process, historical customer interaction data, and technical team experience", 'Develop a detailed implementation plan, including the technical stack, data integration, and deployment strategy', 'Create a timeline for the project, including milestones and deadlines', 'Estimate the budget and resource allocation for the project, including development, training, and deployment costs, as well as ongoing maintenance and support', 'Generate content for the proposal, including the introduction, problem statement, solution overview, key features and benefits, implementation plan, timeline, budget and resource allocation, and conclusion', 'Format the proposal according to the required sections and document type', 'Validate the proposal for completeness, accuracy, and consistency', 'Reflect on the proposal and identify areas for improvement', 'Revise and refine the proposal based on feedback and reflection', 'Finalize the proposal and prepare it for submission to the e-commerce company']
+2026-07-09 12:14:02 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 16 tasks sequentially.
+2026-07-09 12:14:02 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand the request and requirements for the AI-powered customer support chatbot project proposal
+2026-07-09 12:14:02 - agent_logger - INFO - [executor.py:35] - Task 'Understand the request and requirements for the AI-powered customer support chatbot project proposal' executed successfully.
+2026-07-09 12:14:02 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract the project objectives, such as improving customer satisfaction, reducing support costs, and increasing sales
+2026-07-09 12:14:02 - agent_logger - INFO - [executor.py:35] - Task 'Extract the project objectives, such as improving customer satisfaction, reducing support costs, and increasing sales' executed successfully.
+2026-07-09 12:14:02 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify the document type as a Business Proposal
+2026-07-09 12:14:02 - agent_logger - INFO - [executor.py:35] - Task 'Identify the document type as a Business Proposal' executed successfully.
+2026-07-09 12:14:02 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine the required sections for the proposal, including Title Page, Executive Summary, Company Overview, Problem Statement, Solution Overview, Key Features and Benefits, Implementation Plan, Timeline, Budget and Resource Allocation, and Conclusion
+2026-07-09 12:14:02 - agent_logger - INFO - [executor.py:35] - Task 'Determine the required sections for the proposal, including Title Page, Executive Summary, Company Overview, Problem Statement, Solution Overview, Key Features and Benefits, Implementation Plan, Timeline, Budget and Resource Allocation, and Conclusion' executed successfully.
+2026-07-09 12:14:02 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions about the project, including the e-commerce company's customer support process, historical customer interaction data, technical team experience, project team composition, budget, and technical stack compatibility
+2026-07-09 12:14:02 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions about the project, including the e-commerce company's customer support process, historical customer interaction data, technical team experience, project team composition, budget, and technical stack compatibility' executed successfully.
+2026-07-09 12:14:02 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate an outline for the proposal, including an introduction, problem statement, solution overview, key features and benefits, implementation plan, timeline, budget and resource allocation, and conclusion
+2026-07-09 12:14:02 - agent_logger - INFO - [executor.py:35] - Task 'Generate an outline for the proposal, including an introduction, problem statement, solution overview, key features and benefits, implementation plan, timeline, budget and resource allocation, and conclusion' executed successfully.
+2026-07-09 12:14:02 - agent_logger - INFO - [logger.py:82] - Executing Task 7: Research and gather information about the e-commerce company's customer support process, historical customer interaction data, and technical team experience
+2026-07-09 12:14:02 - agent_logger - INFO - [executor.py:35] - Task 'Research and gather information about the e-commerce company's customer support process, historical customer interaction data, and technical team experience' executed successfully.
+2026-07-09 12:14:02 - agent_logger - INFO - [logger.py:82] - Executing Task 8: Develop a detailed implementation plan, including the technical stack, data integration, and deployment strategy
+2026-07-09 12:14:02 - agent_logger - INFO - [executor.py:35] - Task 'Develop a detailed implementation plan, including the technical stack, data integration, and deployment strategy' executed successfully.
+2026-07-09 12:14:02 - agent_logger - INFO - [logger.py:82] - Executing Task 9: Create a timeline for the project, including milestones and deadlines
+2026-07-09 12:14:02 - agent_logger - INFO - [executor.py:35] - Task 'Create a timeline for the project, including milestones and deadlines' executed successfully.
+2026-07-09 12:14:02 - agent_logger - INFO - [logger.py:82] - Executing Task 10: Estimate the budget and resource allocation for the project, including development, training, and deployment costs, as well as ongoing maintenance and support
+2026-07-09 12:14:02 - agent_logger - INFO - [executor.py:35] - Task 'Estimate the budget and resource allocation for the project, including development, training, and deployment costs, as well as ongoing maintenance and support' executed successfully.
+2026-07-09 12:14:02 - agent_logger - INFO - [logger.py:82] - Executing Task 11: Generate content for the proposal, including the introduction, problem statement, solution overview, key features and benefits, implementation plan, timeline, budget and resource allocation, and conclusion
+2026-07-09 12:14:02 - agent_logger - INFO - [executor.py:43] - Generating content for 10 sections...
+2026-07-09 12:14:02 - agent_logger - INFO - [executor.py:47] - Generating section: Title Page
+2026-07-09 12:14:46 - agent_logger - INFO - [executor.py:47] - Generating section: Executive Summary
+2026-07-09 12:14:52 - agent_logger - INFO - [executor.py:47] - Generating section: Company Overview
+2026-07-09 12:16:00 - agent_logger - WARNING - [groq_client.py:51] - Groq generation failed with model llama-3.1-8b-instant: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4545, Requested 5478. Please try again in 40.23s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:16:00 - agent_logger - WARNING - [groq_client.py:51] - Groq generation failed with model llama-3.3-70b-versatile: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95250, Requested 5791. Please try again in 14m59.424s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:16:06 - agent_logger - INFO - [executor.py:47] - Generating section: Problem Statement
+2026-07-09 12:16:06 - agent_logger - WARNING - [groq_client.py:51] - Groq generation failed with model llama-3.1-8b-instant: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.1-8b-instant` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 6697, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:16:06 - agent_logger - WARNING - [groq_client.py:51] - Groq generation failed with model llama-3.3-70b-versatile: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95243, Requested 7010. Please try again in 32m26.592s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:16:48 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 12:16:48 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 12:16:48 - agent_logger - INFO - [llm_factory.py:27] - Initializing Groq LLM Provider...
+2026-07-09 12:16:49 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 12:17:23 - agent_logger - WARNING - [groq_client.py:51] - Groq generation failed with model llama-3.1-8b-instant: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4954, Requested 1097. Please try again in 510ms. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:17:23 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Proposal
+2026-07-09 12:17:23 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Introduction', 'Background', 'Objectives', 'Scope of Work', 'Technical Requirements', 'Implementation Plan', 'Timeline', 'Budget and Cost Estimate', 'Risks & Mitigations', 'Conclusion', 'Recommendations']
+2026-07-09 12:17:23 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 12:17:23 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Proposal
+2026-07-09 12:18:40 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 12:18:40 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 12:18:40 - agent_logger - INFO - [llm_factory.py:27] - Initializing Groq LLM Provider...
+2026-07-09 12:18:40 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 12:18:41 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Proposal
+2026-07-09 12:18:41 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Company Overview', 'Problem Statement', 'Solution Overview', 'Benefits and Value Proposition', 'Implementation Plan', 'Timeline', 'Budget and Resource Allocation', 'Conclusion']
+2026-07-09 12:18:41 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 12:18:41 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Proposal
+2026-07-09 12:18:42 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ["Assumption 1: The e-commerce company has a clear understanding of its customer support pain points and goals for implementing an AI-powered chatbot, which will inform the chatbot's design and functionality.", "Assumption 2: The company has a well-defined customer support knowledge base and existing customer data that can be leveraged to train the chatbot's AI model, reducing the need for extensive data collection and integration.", 'Assumption 3: The company has a dedicated team with the necessary skills and expertise to develop, test, and deploy the chatbot, including AI/ML engineers, software developers, and quality assurance specialists.', "Assumption 4: The company has a scalable infrastructure and technical stack that can support the chatbot's integration with its existing e-commerce platform, including APIs, databases, and messaging systems.", 'Assumption 5: The company has a clear plan for handling customer escalations and complex issues that may arise, including a process for human customer support agents to intervene and resolve issues when necessary.', 'Assumption 6: The company has a realistic timeline for implementation, with a minimum of 12-16 weeks for development, testing, and deployment, and a budget that accounts for the costs of AI/ML model development, infrastructure, and personnel.']
+2026-07-09 12:18:42 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 12:19:19 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand the request for creating a project proposal for an AI-powered customer support chatbot for an e-commerce company.', 'Extract the objectives of the project proposal, including the key benefits and value proposition of the chatbot.', 'Identify the document type as a Business Proposal and confirm the required sections.', 'Determine the required sections for the Business Proposal, including the Title Page, Executive Summary, Company Overview, Problem Statement, Solution Overview, Benefits and Value Proposition, Implementation Plan, Timeline, Budget and Resource Allocation, and Conclusion.', "Create a list of assumptions based on the provided assumptions, including the e-commerce company's understanding of customer support pain points and goals, existing customer data, dedicated team, scalable infrastructure, plan for handling customer escalations, and realistic timeline and budget.", 'Generate an outline for the Business Proposal, including the required sections and key points to cover in each section.', 'Research and gather information on AI-powered customer support chatbots, including their benefits, challenges, and best practices, to inform the Solution Overview and Benefits and Value Proposition sections.', 'Develop a detailed Implementation Plan, including the development, testing, and deployment phases, and identify the key milestones and deliverables.', "Create a Timeline for the project, including the key dates and deadlines for each phase, and ensure it aligns with the company's realistic timeline.", "Estimate the Budget and Resource Allocation required for the project, including the costs of AI/ML model development, infrastructure, and personnel, and ensure it aligns with the company's budget.", 'Write the content for each section of the Business Proposal, including the Title Page, Executive Summary, Company Overview, Problem Statement, Solution Overview, Benefits and Value Proposition, Implementation Plan, Timeline, Budget and Resource Allocation, and Conclusion.', "Format the Business Proposal according to the company's branding and style guidelines, including the use of templates, fonts, and images.", "Validate the Business Proposal to ensure it meets the company's requirements and expectations, and make any necessary revisions.", 'Reflect on the project proposal and identify areas for improvement, including the potential risks and challenges, and provide recommendations for mitigating them.']
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 14 tasks sequentially.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand the request for creating a project proposal for an AI-powered customer support chatbot for an e-commerce company.
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:35] - Task 'Understand the request for creating a project proposal for an AI-powered customer support chatbot for an e-commerce company.' executed successfully.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract the objectives of the project proposal, including the key benefits and value proposition of the chatbot.
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:35] - Task 'Extract the objectives of the project proposal, including the key benefits and value proposition of the chatbot.' executed successfully.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify the document type as a Business Proposal and confirm the required sections.
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:35] - Task 'Identify the document type as a Business Proposal and confirm the required sections.' executed successfully.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine the required sections for the Business Proposal, including the Title Page, Executive Summary, Company Overview, Problem Statement, Solution Overview, Benefits and Value Proposition, Implementation Plan, Timeline, Budget and Resource Allocation, and Conclusion.
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:35] - Task 'Determine the required sections for the Business Proposal, including the Title Page, Executive Summary, Company Overview, Problem Statement, Solution Overview, Benefits and Value Proposition, Implementation Plan, Timeline, Budget and Resource Allocation, and Conclusion.' executed successfully.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create a list of assumptions based on the provided assumptions, including the e-commerce company's understanding of customer support pain points and goals, existing customer data, dedicated team, scalable infrastructure, plan for handling customer escalations, and realistic timeline and budget.
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:35] - Task 'Create a list of assumptions based on the provided assumptions, including the e-commerce company's understanding of customer support pain points and goals, existing customer data, dedicated team, scalable infrastructure, plan for handling customer escalations, and realistic timeline and budget.' executed successfully.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate an outline for the Business Proposal, including the required sections and key points to cover in each section.
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:35] - Task 'Generate an outline for the Business Proposal, including the required sections and key points to cover in each section.' executed successfully.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:82] - Executing Task 7: Research and gather information on AI-powered customer support chatbots, including their benefits, challenges, and best practices, to inform the Solution Overview and Benefits and Value Proposition sections.
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:35] - Task 'Research and gather information on AI-powered customer support chatbots, including their benefits, challenges, and best practices, to inform the Solution Overview and Benefits and Value Proposition sections.' executed successfully.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:82] - Executing Task 8: Develop a detailed Implementation Plan, including the development, testing, and deployment phases, and identify the key milestones and deliverables.
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:35] - Task 'Develop a detailed Implementation Plan, including the development, testing, and deployment phases, and identify the key milestones and deliverables.' executed successfully.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:82] - Executing Task 9: Create a Timeline for the project, including the key dates and deadlines for each phase, and ensure it aligns with the company's realistic timeline.
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:35] - Task 'Create a Timeline for the project, including the key dates and deadlines for each phase, and ensure it aligns with the company's realistic timeline.' executed successfully.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:82] - Executing Task 10: Estimate the Budget and Resource Allocation required for the project, including the costs of AI/ML model development, infrastructure, and personnel, and ensure it aligns with the company's budget.
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:35] - Task 'Estimate the Budget and Resource Allocation required for the project, including the costs of AI/ML model development, infrastructure, and personnel, and ensure it aligns with the company's budget.' executed successfully.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:82] - Executing Task 11: Write the content for each section of the Business Proposal, including the Title Page, Executive Summary, Company Overview, Problem Statement, Solution Overview, Benefits and Value Proposition, Implementation Plan, Timeline, Budget and Resource Allocation, and Conclusion.
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:35] - Task 'Write the content for each section of the Business Proposal, including the Title Page, Executive Summary, Company Overview, Problem Statement, Solution Overview, Benefits and Value Proposition, Implementation Plan, Timeline, Budget and Resource Allocation, and Conclusion.' executed successfully.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:82] - Executing Task 12: Format the Business Proposal according to the company's branding and style guidelines, including the use of templates, fonts, and images.
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:35] - Task 'Format the Business Proposal according to the company's branding and style guidelines, including the use of templates, fonts, and images.' executed successfully.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:82] - Executing Task 13: Validate the Business Proposal to ensure it meets the company's requirements and expectations, and make any necessary revisions.
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:30] - Initiating structural and file presence checks.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:82] - Executing Task 14: Reflect on the project proposal and identify areas for improvement, including the potential risks and challenges, and provide recommendations for mitigating them.
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:32] - Readying quality assurance (QA) reflection pipeline.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:70] - [STEP] Document Generation - Compiling markdown to styled Word Document.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-07-09 12:19:19 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/business_proposal_1783579759.docx
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:70] - [STEP] Reflection Phase - Auditing document quality with LLM Self-Check.
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-07-09 12:19:19 - agent_logger - INFO - [reflection.py:41] - Reflection complete. Status: FAIL. Missing: ['Executive Summary', 'Problem Statement', 'Solution Overview', 'Technical Requirements', 'Implementation Plan', 'Timeline and Milestones', 'Budget and Resource Allocation', 'Risks and Assumptions', 'Conclusion']
+2026-07-09 12:19:19 - agent_logger - INFO - [logger.py:70] - [STEP] Regeneration Loop - Document failed check. Regenerating sections: ['Executive Summary', 'Problem Statement', 'Solution Overview', 'Technical Requirements', 'Implementation Plan', 'Timeline and Milestones', 'Budget and Resource Allocation', 'Risks and Assumptions', 'Conclusion']
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:72] - Regenerating failed sections: ['Executive Summary', 'Problem Statement', 'Solution Overview', 'Technical Requirements', 'Implementation Plan', 'Timeline and Milestones', 'Budget and Resource Allocation', 'Risks and Assumptions', 'Conclusion']
+2026-07-09 12:19:19 - agent_logger - INFO - [executor.py:75] - Regenerating section: Executive Summary
+2026-07-09 12:19:20 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Executive Summary
+2026-07-09 12:19:20 - agent_logger - INFO - [executor.py:75] - Regenerating section: Problem Statement
+2026-07-09 12:19:34 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Problem Statement
+2026-07-09 12:19:34 - agent_logger - INFO - [executor.py:75] - Regenerating section: Solution Overview
+2026-07-09 12:19:52 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Solution Overview
+2026-07-09 12:19:52 - agent_logger - INFO - [executor.py:75] - Regenerating section: Technical Requirements
+2026-07-09 12:20:20 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Technical Requirements
+2026-07-09 12:20:20 - agent_logger - INFO - [executor.py:75] - Regenerating section: Implementation Plan
+2026-07-09 12:20:35 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Implementation Plan
+2026-07-09 12:20:35 - agent_logger - INFO - [executor.py:75] - Regenerating section: Timeline and Milestones
+2026-07-09 12:21:32 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Timeline and Milestones
+2026-07-09 12:21:32 - agent_logger - INFO - [executor.py:75] - Regenerating section: Budget and Resource Allocation
+2026-07-09 12:22:20 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Budget and Resource Allocation
+2026-07-09 12:22:20 - agent_logger - INFO - [executor.py:75] - Regenerating section: Risks and Assumptions
+2026-07-09 12:22:20 - agent_logger - WARNING - [groq_client.py:51] - Groq generation failed with model llama-3.1-8b-instant: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.1-8b-instant` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 6475, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:22:20 - agent_logger - WARNING - [groq_client.py:51] - Groq generation failed with model llama-3.3-70b-versatile: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99290, Requested 7958. Please try again in 1h44m22.272s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:22:24 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Risks and Assumptions
+2026-07-09 12:22:24 - agent_logger - INFO - [executor.py:75] - Regenerating section: Conclusion
+2026-07-09 12:22:50 - agent_logger - INFO - [executor.py:96] - Successfully regenerated section: Conclusion
+2026-07-09 12:22:50 - agent_logger - INFO - [workflow.py:72] - Re-generating final Word Document with updated sections.
+2026-07-09 12:22:50 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-07-09 12:22:50 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/business_proposal_1783579759.docx
+2026-07-09 12:22:50 - agent_logger - INFO - [workflow.py:81] - Running post-regeneration sanity check.
+2026-07-09 12:22:50 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-07-09 12:22:50 - agent_logger - WARNING - [groq_client.py:51] - Groq generation failed with model llama-3.1-8b-instant: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.1-8b-instant` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 9135, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:22:50 - agent_logger - WARNING - [groq_client.py:51] - Groq generation failed with model llama-3.3-70b-versatile: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99255, Requested 12431. Please try again in 2h48m16.704s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:22:50 - agent_logger - WARNING - [groq_client.py:51] - Groq generation failed with model openai/gpt-oss-120b: Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 9868, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Trying next model...
+2026-07-09 12:22:50 - agent_logger - ERROR - [reflection.py:47] - Reflection LLM query failed: All Groq models failed. Last error: Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kc8jsyphfcg8zvxetk180jt9` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 9868, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Defaulting to PASS.
+2026-07-09 12:22:50 - agent_logger - INFO - [logger.py:70] - [STEP] Verification - Validating final document file status.
+2026-07-09 12:22:50 - agent_logger - INFO - [validator.py:17] - Validation succeeded: File generated_docs/business_proposal_1783579759.docx exists and is 50297 bytes.
+2026-07-09 12:22:50 - agent_logger - INFO - [workflow.py:134] - Generating final brief document summary...
+2026-07-09 12:23:00 - agent_logger - INFO - [logger.py:94] - Execution completed successfully.
+2026-07-09 12:34:23 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 12:34:23 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 12:34:23 - agent_logger - INFO - [llm_factory.py:27] - Initializing Gemini LLM Provider...
+2026-07-09 12:34:23 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 12:34:23 - agent_logger - WARNING - [gemini_client.py:76] - Error occurred on model gemini-2.5-flash (attempt 1/3): Gemini API returned status code 403: {
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+. Retrying...
+2026-07-09 12:34:29 - agent_logger - WARNING - [gemini_client.py:76] - Error occurred on model gemini-2.5-flash (attempt 2/3): Gemini API returned status code 403: {
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+. Retrying...
+2026-07-09 12:34:34 - agent_logger - WARNING - [gemini_client.py:79] - Gemini generation failed with model gemini-2.5-flash: Gemini API returned status code 403: {
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-07-09 12:34:34 - agent_logger - WARNING - [gemini_client.py:69] - Gemini API rate limit (429) hit for model gemini-2.0-flash (attempt 1/3). Retrying in 26.5s...
+2026-07-09 12:35:01 - agent_logger - WARNING - [gemini_client.py:69] - Gemini API rate limit (429) hit for model gemini-2.0-flash (attempt 2/3). Retrying in 59.5s...
+2026-07-09 12:36:01 - agent_logger - WARNING - [gemini_client.py:69] - Gemini API rate limit (429) hit for model gemini-2.0-flash (attempt 3/3). Retrying in 59.5s...
+2026-07-09 12:36:56 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 12:36:56 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 12:36:56 - agent_logger - INFO - [llm_factory.py:27] - Initializing Gemini LLM Provider...
+2026-07-09 12:36:56 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 12:36:57 - agent_logger - WARNING - [gemini_client.py:76] - Error occurred on model gemini-3.5-flash (attempt 1/3): Gemini API returned status code 403: {
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+. Retrying...
+2026-07-09 12:37:02 - agent_logger - WARNING - [gemini_client.py:76] - Error occurred on model gemini-3.5-flash (attempt 2/3): Gemini API returned status code 403: {
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+. Retrying...
+2026-07-09 12:37:08 - agent_logger - WARNING - [gemini_client.py:79] - Gemini generation failed with model gemini-3.5-flash: Gemini API returned status code 403: {
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-07-09 12:37:08 - agent_logger - ERROR - [planner.py:31] - Intent analysis LLM query failed: All Gemini models failed. Last error: Gemini API returned status code 403: {
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+. Using generic fallback.
+2026-07-09 12:37:08 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Report
+2026-07-09 12:37:08 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Executive Summary', 'Objectives', 'Background', 'Main Content', 'Recommendations', 'Risks & Mitigations', 'Timeline', 'Conclusion']
+2026-07-09 12:37:08 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 12:37:08 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Report
+2026-07-09 12:37:08 - agent_logger - WARNING - [gemini_client.py:76] - Error occurred on model gemini-3.5-flash (attempt 1/3): Gemini API returned status code 403: {
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+. Retrying...
+2026-07-09 12:40:07 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 12:40:07 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 12:40:07 - agent_logger - INFO - [llm_factory.py:27] - Initializing Gemini LLM Provider...
+2026-07-09 12:40:07 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 12:40:07 - agent_logger - WARNING - [gemini_client.py:76] - Gemini API rate limit (429) hit for model gemini-2.0-flash-lite (attempt 1/3). Retrying in 53.5s...
+2026-07-09 12:41:01 - agent_logger - WARNING - [gemini_client.py:76] - Gemini API rate limit (429) hit for model gemini-2.0-flash-lite (attempt 2/3). Retrying in 59.5s...
+2026-07-09 12:42:00 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 12:42:00 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 12:42:00 - agent_logger - INFO - [llm_factory.py:28] - Initializing local Ollama LLM Provider...
+2026-07-09 12:42:00 - agent_logger - WARNING - [ollama_client.py:30] - Could not connect to local Ollama service at http://localhost:11434: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/tags (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused")). Initializing Ollama Simulator fallback.
+2026-07-09 12:42:00 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 12:42:00 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Proposal
+2026-07-09 12:42:00 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Objectives', 'Background', 'Main Content', 'Recommendations', 'Risks & Mitigations', 'Timeline', 'Conclusion']
+2026-07-09 12:42:00 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 12:42:00 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Proposal
+2026-07-09 12:42:00 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ['Stakeholders are aligned on the primary objectives and business drivers.', 'No external software integration beyond the AI chatbot is within the initial scope.', 'Development and deployment will occur on standard public cloud infrastructure.', 'Existing customer support agents will participate in user acceptance testing (UAT).']
+2026-07-09 12:42:00 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 12:42:00 - agent_logger - ERROR - [planner.py:67] - Task generation LLM query failed: Parsed planner JSON did not contain tasks array.. Using fallback checklist.
+2026-07-09 12:42:00 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand request', 'Extract objectives', 'Identify document type', 'Determine required sections', 'Create assumptions', 'Generate outline', 'Generate content', 'Format document', 'Validate document', 'Reflect and improve']
+2026-07-09 12:42:00 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 10 tasks sequentially.
+2026-07-09 12:42:00 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand request
+2026-07-09 12:42:00 - agent_logger - INFO - [executor.py:35] - Task 'Understand request' executed successfully.
+2026-07-09 12:42:00 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract objectives
+2026-07-09 12:42:00 - agent_logger - INFO - [executor.py:35] - Task 'Extract objectives' executed successfully.
+2026-07-09 12:42:00 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify document type
+2026-07-09 12:42:00 - agent_logger - INFO - [executor.py:35] - Task 'Identify document type' executed successfully.
+2026-07-09 12:42:00 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine required sections
+2026-07-09 12:42:00 - agent_logger - INFO - [executor.py:35] - Task 'Determine required sections' executed successfully.
+2026-07-09 12:42:00 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions
+2026-07-09 12:42:00 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions' executed successfully.
+2026-07-09 12:42:00 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate outline
+2026-07-09 12:42:00 - agent_logger - INFO - [executor.py:43] - Generating content for 9 sections...
+2026-07-09 12:42:00 - agent_logger - INFO - [executor.py:53] - Generating section: Title Page
+2026-07-09 12:42:00 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:42:04 - agent_logger - INFO - [executor.py:53] - Generating section: Executive Summary
+2026-07-09 12:42:04 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:42:09 - agent_logger - INFO - [executor.py:53] - Generating section: Objectives
+2026-07-09 12:42:09 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:42:13 - agent_logger - INFO - [executor.py:53] - Generating section: Background
+2026-07-09 12:42:13 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:42:18 - agent_logger - INFO - [executor.py:53] - Generating section: Main Content
+2026-07-09 12:42:18 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:42:22 - agent_logger - INFO - [executor.py:53] - Generating section: Recommendations
+2026-07-09 12:42:22 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:43:34 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 12:43:34 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 12:43:34 - agent_logger - INFO - [llm_factory.py:28] - Initializing local Ollama LLM Provider...
+2026-07-09 12:43:34 - agent_logger - WARNING - [ollama_client.py:30] - Could not connect to local Ollama service at http://localhost:11434: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/tags (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused")). Initializing Ollama Simulator fallback.
+2026-07-09 12:43:34 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 12:43:34 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Proposal
+2026-07-09 12:43:34 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Objectives', 'Background', 'Main Content', 'Recommendations', 'Risks & Mitigations', 'Timeline', 'Conclusion']
+2026-07-09 12:43:34 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 12:43:34 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Proposal
+2026-07-09 12:43:34 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ['Stakeholders are aligned on the primary objectives and business drivers.', 'No external software integration beyond the AI chatbot is within the initial scope.', 'Development and deployment will occur on standard public cloud infrastructure.', 'Existing customer support agents will participate in user acceptance testing (UAT).']
+2026-07-09 12:43:34 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 12:43:34 - agent_logger - ERROR - [planner.py:67] - Task generation LLM query failed: Parsed planner JSON did not contain tasks array.. Using fallback checklist.
+2026-07-09 12:43:34 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand request', 'Extract objectives', 'Identify document type', 'Determine required sections', 'Create assumptions', 'Generate outline', 'Generate content', 'Format document', 'Validate document', 'Reflect and improve']
+2026-07-09 12:43:34 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 10 tasks sequentially.
+2026-07-09 12:43:34 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand request
+2026-07-09 12:43:34 - agent_logger - INFO - [executor.py:35] - Task 'Understand request' executed successfully.
+2026-07-09 12:43:34 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract objectives
+2026-07-09 12:43:34 - agent_logger - INFO - [executor.py:35] - Task 'Extract objectives' executed successfully.
+2026-07-09 12:43:34 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify document type
+2026-07-09 12:43:34 - agent_logger - INFO - [executor.py:35] - Task 'Identify document type' executed successfully.
+2026-07-09 12:43:34 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine required sections
+2026-07-09 12:43:34 - agent_logger - INFO - [executor.py:35] - Task 'Determine required sections' executed successfully.
+2026-07-09 12:43:34 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions
+2026-07-09 12:43:34 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions' executed successfully.
+2026-07-09 12:43:34 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate outline
+2026-07-09 12:43:34 - agent_logger - INFO - [executor.py:43] - Generating content for 9 sections...
+2026-07-09 12:43:34 - agent_logger - INFO - [executor.py:53] - Generating section: Title Page
+2026-07-09 12:43:34 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:43:38 - agent_logger - INFO - [executor.py:53] - Generating section: Executive Summary
+2026-07-09 12:43:38 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:46:34 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 12:46:34 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 12:46:34 - agent_logger - INFO - [llm_factory.py:28] - Initializing local Ollama LLM Provider...
+2026-07-09 12:46:34 - agent_logger - WARNING - [ollama_client.py:30] - Could not connect to local Ollama service at http://localhost:11434: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/tags (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused")). Initializing Ollama Simulator fallback.
+2026-07-09 12:46:34 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 12:46:34 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Proposal
+2026-07-09 12:46:34 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Objectives', 'Background', 'Main Content', 'Recommendations', 'Risks & Mitigations', 'Timeline', 'Conclusion']
+2026-07-09 12:46:34 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 12:46:34 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Proposal
+2026-07-09 12:46:34 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ['Stakeholders are aligned on the primary objectives and business drivers.', 'No external software integration beyond the AI chatbot is within the initial scope.', 'Development and deployment will occur on standard public cloud infrastructure.', 'Existing customer support agents will participate in user acceptance testing (UAT).']
+2026-07-09 12:46:34 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 12:46:34 - agent_logger - ERROR - [planner.py:67] - Task generation LLM query failed: Parsed planner JSON did not contain tasks array.. Using fallback checklist.
+2026-07-09 12:46:34 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand request', 'Extract objectives', 'Identify document type', 'Determine required sections', 'Create assumptions', 'Generate outline', 'Generate content', 'Format document', 'Validate document', 'Reflect and improve']
+2026-07-09 12:46:34 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 10 tasks sequentially.
+2026-07-09 12:46:34 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand request
+2026-07-09 12:46:34 - agent_logger - INFO - [executor.py:35] - Task 'Understand request' executed successfully.
+2026-07-09 12:46:34 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract objectives
+2026-07-09 12:46:34 - agent_logger - INFO - [executor.py:35] - Task 'Extract objectives' executed successfully.
+2026-07-09 12:46:34 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify document type
+2026-07-09 12:46:34 - agent_logger - INFO - [executor.py:35] - Task 'Identify document type' executed successfully.
+2026-07-09 12:46:34 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine required sections
+2026-07-09 12:46:34 - agent_logger - INFO - [executor.py:35] - Task 'Determine required sections' executed successfully.
+2026-07-09 12:46:34 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions
+2026-07-09 12:46:34 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions' executed successfully.
+2026-07-09 12:46:34 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate outline
+2026-07-09 12:46:34 - agent_logger - INFO - [executor.py:43] - Generating content for 9 sections...
+2026-07-09 12:46:34 - agent_logger - INFO - [executor.py:53] - Generating section: Title Page
+2026-07-09 12:46:34 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:46:39 - agent_logger - INFO - [executor.py:53] - Generating section: Executive Summary
+2026-07-09 12:46:39 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:46:43 - agent_logger - INFO - [executor.py:53] - Generating section: Objectives
+2026-07-09 12:46:43 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:46:48 - agent_logger - INFO - [executor.py:53] - Generating section: Background
+2026-07-09 12:46:48 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:50:02 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 12:50:02 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 12:50:02 - agent_logger - INFO - [llm_factory.py:28] - Initializing local Ollama LLM Provider...
+2026-07-09 12:50:02 - agent_logger - WARNING - [ollama_client.py:30] - Could not connect to local Ollama service at http://localhost:11434: Tags endpoint returned status code 500. Initializing Ollama Simulator fallback.
+2026-07-09 12:50:02 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 12:50:02 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Proposal
+2026-07-09 12:50:02 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Objectives', 'Background', 'Main Content', 'Recommendations', 'Risks & Mitigations', 'Timeline', 'Conclusion']
+2026-07-09 12:50:02 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 12:50:02 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Proposal
+2026-07-09 12:50:02 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ['Stakeholders are aligned on the primary objectives and business drivers.', 'No external software integration beyond the AI chatbot is within the initial scope.', 'Development and deployment will occur on standard public cloud infrastructure.', 'Existing customer support agents will participate in user acceptance testing (UAT).']
+2026-07-09 12:50:02 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 12:50:02 - agent_logger - ERROR - [planner.py:67] - Task generation LLM query failed: Parsed planner JSON did not contain tasks array.. Using fallback checklist.
+2026-07-09 12:50:02 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand request', 'Extract objectives', 'Identify document type', 'Determine required sections', 'Create assumptions', 'Generate outline', 'Generate content', 'Format document', 'Validate document', 'Reflect and improve']
+2026-07-09 12:50:02 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 10 tasks sequentially.
+2026-07-09 12:50:02 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand request
+2026-07-09 12:50:02 - agent_logger - INFO - [executor.py:35] - Task 'Understand request' executed successfully.
+2026-07-09 12:50:02 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract objectives
+2026-07-09 12:50:02 - agent_logger - INFO - [executor.py:35] - Task 'Extract objectives' executed successfully.
+2026-07-09 12:50:02 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify document type
+2026-07-09 12:50:02 - agent_logger - INFO - [executor.py:35] - Task 'Identify document type' executed successfully.
+2026-07-09 12:50:02 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine required sections
+2026-07-09 12:50:02 - agent_logger - INFO - [executor.py:35] - Task 'Determine required sections' executed successfully.
+2026-07-09 12:50:02 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions
+2026-07-09 12:50:02 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions' executed successfully.
+2026-07-09 12:50:02 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate outline
+2026-07-09 12:50:02 - agent_logger - INFO - [executor.py:43] - Generating content for 9 sections...
+2026-07-09 12:50:02 - agent_logger - INFO - [executor.py:53] - Generating section: Title Page
+2026-07-09 12:50:02 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:50:07 - agent_logger - INFO - [executor.py:53] - Generating section: Executive Summary
+2026-07-09 12:50:07 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:50:11 - agent_logger - INFO - [executor.py:53] - Generating section: Objectives
+2026-07-09 12:50:11 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:50:16 - agent_logger - INFO - [executor.py:53] - Generating section: Background
+2026-07-09 12:50:16 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:57:54 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 12:57:54 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 12:57:54 - agent_logger - INFO - [llm_factory.py:28] - Initializing local Ollama LLM Provider...
+2026-07-09 12:57:54 - agent_logger - INFO - [ollama_client.py:20] - Ollama is running locally. Available models: []
+2026-07-09 12:57:54 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 12:57:54 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:57:54 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Proposal
+2026-07-09 12:57:54 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Objectives', 'Background', 'Main Content', 'Recommendations', 'Risks & Mitigations', 'Timeline', 'Conclusion']
+2026-07-09 12:57:54 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 12:57:54 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Proposal
+2026-07-09 12:57:54 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:57:54 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ['Stakeholders are aligned on the primary objectives and business drivers.', 'No external software integration beyond the AI chatbot is within the initial scope.', 'Development and deployment will occur on standard public cloud infrastructure.', 'Existing customer support agents will participate in user acceptance testing (UAT).']
+2026-07-09 12:57:54 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 12:57:54 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:57:54 - agent_logger - ERROR - [planner.py:67] - Task generation LLM query failed: Parsed planner JSON did not contain tasks array.. Using fallback checklist.
+2026-07-09 12:57:54 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand request', 'Extract objectives', 'Identify document type', 'Determine required sections', 'Create assumptions', 'Generate outline', 'Generate content', 'Format document', 'Validate document', 'Reflect and improve']
+2026-07-09 12:57:54 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 10 tasks sequentially.
+2026-07-09 12:57:54 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand request
+2026-07-09 12:57:54 - agent_logger - INFO - [executor.py:35] - Task 'Understand request' executed successfully.
+2026-07-09 12:57:54 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract objectives
+2026-07-09 12:57:54 - agent_logger - INFO - [executor.py:35] - Task 'Extract objectives' executed successfully.
+2026-07-09 12:57:54 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify document type
+2026-07-09 12:57:54 - agent_logger - INFO - [executor.py:35] - Task 'Identify document type' executed successfully.
+2026-07-09 12:57:54 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine required sections
+2026-07-09 12:57:54 - agent_logger - INFO - [executor.py:35] - Task 'Determine required sections' executed successfully.
+2026-07-09 12:57:54 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions
+2026-07-09 12:57:54 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions' executed successfully.
+2026-07-09 12:57:54 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate outline
+2026-07-09 12:57:54 - agent_logger - INFO - [executor.py:43] - Generating content for 9 sections...
+2026-07-09 12:57:54 - agent_logger - INFO - [executor.py:53] - Generating section: Title Page
+2026-07-09 12:57:54 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:57:54 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:57:59 - agent_logger - INFO - [executor.py:53] - Generating section: Executive Summary
+2026-07-09 12:57:59 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:57:59 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:58:03 - agent_logger - INFO - [executor.py:53] - Generating section: Objectives
+2026-07-09 12:58:03 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:58:03 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:58:08 - agent_logger - INFO - [executor.py:53] - Generating section: Background
+2026-07-09 12:58:08 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:58:08 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:58:12 - agent_logger - INFO - [executor.py:53] - Generating section: Main Content
+2026-07-09 12:58:12 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:58:12 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:58:17 - agent_logger - INFO - [executor.py:53] - Generating section: Recommendations
+2026-07-09 12:58:17 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:58:17 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:58:21 - agent_logger - INFO - [executor.py:53] - Generating section: Risks & Mitigations
+2026-07-09 12:58:21 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:58:21 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:58:26 - agent_logger - INFO - [executor.py:53] - Generating section: Timeline
+2026-07-09 12:58:26 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:58:26 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:58:30 - agent_logger - INFO - [executor.py:53] - Generating section: Conclusion
+2026-07-09 12:58:30 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:58:30 - agent_logger - INFO - [logger.py:82] - Executing Task 7: Generate content
+2026-07-09 12:58:30 - agent_logger - INFO - [executor.py:43] - Generating content for 9 sections...
+2026-07-09 12:58:30 - agent_logger - INFO - [executor.py:53] - Generating section: Title Page
+2026-07-09 12:58:30 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:58:30 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:58:35 - agent_logger - INFO - [executor.py:53] - Generating section: Executive Summary
+2026-07-09 12:58:35 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:58:35 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:58:39 - agent_logger - INFO - [executor.py:53] - Generating section: Objectives
+2026-07-09 12:58:39 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:58:39 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:58:44 - agent_logger - INFO - [executor.py:53] - Generating section: Background
+2026-07-09 12:58:44 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:58:44 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:58:48 - agent_logger - INFO - [executor.py:53] - Generating section: Main Content
+2026-07-09 12:58:48 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:58:48 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:58:53 - agent_logger - INFO - [executor.py:53] - Generating section: Recommendations
+2026-07-09 12:58:53 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:58:53 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:58:57 - agent_logger - INFO - [executor.py:53] - Generating section: Risks & Mitigations
+2026-07-09 12:58:57 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:58:57 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:59:02 - agent_logger - INFO - [executor.py:53] - Generating section: Timeline
+2026-07-09 12:59:02 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:59:02 - agent_logger - INFO - [executor.py:50] - Pausing for 4.5 seconds to respect Gemini API rate limits...
+2026-07-09 12:59:06 - agent_logger - INFO - [executor.py:53] - Generating section: Conclusion
+2026-07-09 12:59:06 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:59:06 - agent_logger - INFO - [logger.py:82] - Executing Task 8: Format document
+2026-07-09 12:59:06 - agent_logger - INFO - [executor.py:28] - Preparing formatting styles, typography, and page numbers.
+2026-07-09 12:59:06 - agent_logger - INFO - [logger.py:82] - Executing Task 9: Validate document
+2026-07-09 12:59:06 - agent_logger - INFO - [executor.py:30] - Initiating structural and file presence checks.
+2026-07-09 12:59:06 - agent_logger - INFO - [logger.py:82] - Executing Task 10: Reflect and improve
+2026-07-09 12:59:06 - agent_logger - INFO - [executor.py:32] - Readying quality assurance (QA) reflection pipeline.
+2026-07-09 12:59:06 - agent_logger - INFO - [logger.py:70] - [STEP] Document Generation - Compiling markdown to styled Word Document.
+2026-07-09 12:59:06 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-07-09 12:59:06 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/business_proposal_1783582146.docx
+2026-07-09 12:59:06 - agent_logger - INFO - [logger.py:70] - [STEP] Reflection Phase - Auditing document quality with LLM Self-Check.
+2026-07-09 12:59:06 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-07-09 12:59:06 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:59:06 - agent_logger - ERROR - [reflection.py:54] - Reflection LLM query failed: Parsed reflection JSON did not contain status field.. Defaulting to PASS.
+2026-07-09 12:59:06 - agent_logger - INFO - [logger.py:70] - [STEP] Verification - Validating final document file status.
+2026-07-09 12:59:06 - agent_logger - INFO - [validator.py:17] - Validation succeeded: File generated_docs/business_proposal_1783582146.docx exists and is 37740 bytes.
+2026-07-09 12:59:06 - agent_logger - INFO - [workflow.py:134] - Generating final brief document summary...
+2026-07-09 12:59:06 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: Ollama API returned status code 404: {"error":"model 'llama3' not found"}. Falling back to simulation.
+2026-07-09 12:59:06 - agent_logger - INFO - [logger.py:94] - Execution completed successfully.
+2026-07-09 13:00:49 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 13:00:49 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 13:00:49 - agent_logger - INFO - [llm_factory.py:28] - Initializing local Ollama LLM Provider...
+2026-07-09 13:00:49 - agent_logger - INFO - [ollama_client.py:20] - Ollama is running locally. Available models: ['qwen2.5:0.5b']
+2026-07-09 13:00:49 - agent_logger - WARNING - [ollama_client.py:25] - Default model 'llama3' not found in Ollama. Using fallback: qwen2.5:0.5b
+2026-07-09 13:00:49 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 13:01:24 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Technical Implementation Plan
+2026-07-09 13:01:24 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Executive Summary', 'Objectives', 'Background', 'Main Content', 'Recommendations', 'Risks & Mitigations', 'Timeline', 'Conclusion']
+2026-07-09 13:01:24 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 13:01:24 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Technical Implementation Plan
+2026-07-09 13:01:25 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ["{'name': 'The current legacy ERP system is a monolithic architecture with complex integration and data management.', 'reason': 'This makes it challenging to migrate the system due to its complexity.'}", "{'name': 'We have an existing team of eight engineers who are experienced in microservices architecture.', 'reason': 'Having this team ensures that we can deliver a successful implementation within the given timeframe and budget.'}", '{\'name\': "The current legacy ERP system is not yet fully developed, so there\'s no ready-to-use codebase to work with.", \'reason\': \'This makes it difficult to plan for future maintenance and updates.\'}', "{'name': 'We have an uncertain budget of $50,000 for the migration process.', 'reason': 'This sets a realistic baseline for our timeline and budget.'}"]
+2026-07-09 13:01:25 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 13:01:25 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand request', 'Extract objectives', 'Identify document type', 'Determine required sections', 'Create assumptions', 'Generate outline', 'Generate content', 'Format document', 'Validate document']
+2026-07-09 13:01:25 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 9 tasks sequentially.
+2026-07-09 13:01:25 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand request
+2026-07-09 13:01:25 - agent_logger - INFO - [executor.py:35] - Task 'Understand request' executed successfully.
+2026-07-09 13:01:25 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract objectives
+2026-07-09 13:01:25 - agent_logger - INFO - [executor.py:35] - Task 'Extract objectives' executed successfully.
+2026-07-09 13:01:25 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify document type
+2026-07-09 13:01:25 - agent_logger - INFO - [executor.py:35] - Task 'Identify document type' executed successfully.
+2026-07-09 13:01:25 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine required sections
+2026-07-09 13:01:25 - agent_logger - INFO - [executor.py:35] - Task 'Determine required sections' executed successfully.
+2026-07-09 13:01:25 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions
+2026-07-09 13:01:25 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions' executed successfully.
+2026-07-09 13:01:25 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate outline
+2026-07-09 13:01:25 - agent_logger - INFO - [executor.py:43] - Generating content for 8 sections...
+2026-07-09 13:01:25 - agent_logger - INFO - [executor.py:55] - Generating section: Executive Summary
+2026-07-09 13:01:29 - agent_logger - INFO - [executor.py:55] - Generating section: Objectives
+2026-07-09 13:01:30 - agent_logger - INFO - [executor.py:55] - Generating section: Background
+2026-07-09 13:01:31 - agent_logger - INFO - [executor.py:55] - Generating section: Main Content
+2026-07-09 13:01:32 - agent_logger - INFO - [executor.py:55] - Generating section: Recommendations
+2026-07-09 13:01:33 - agent_logger - INFO - [executor.py:55] - Generating section: Risks & Mitigations
+2026-07-09 13:01:34 - agent_logger - INFO - [executor.py:55] - Generating section: Timeline
+2026-07-09 13:01:35 - agent_logger - INFO - [executor.py:55] - Generating section: Conclusion
+2026-07-09 13:02:35 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=60). Falling back to simulation.
+2026-07-09 13:02:35 - agent_logger - INFO - [logger.py:82] - Executing Task 7: Generate content
+2026-07-09 13:02:35 - agent_logger - INFO - [executor.py:43] - Generating content for 8 sections...
+2026-07-09 13:02:35 - agent_logger - INFO - [executor.py:55] - Generating section: Executive Summary
+2026-07-09 13:02:37 - agent_logger - INFO - [executor.py:55] - Generating section: Objectives
+2026-07-09 13:02:39 - agent_logger - INFO - [executor.py:55] - Generating section: Background
+2026-07-09 13:02:41 - agent_logger - INFO - [executor.py:55] - Generating section: Main Content
+2026-07-09 13:02:42 - agent_logger - INFO - [executor.py:55] - Generating section: Recommendations
+2026-07-09 13:03:43 - agent_logger - ERROR - [ollama_client.py:62] - Ollama generation failed: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=60). Falling back to simulation.
+2026-07-09 13:03:43 - agent_logger - INFO - [executor.py:55] - Generating section: Risks & Mitigations
+2026-07-09 13:04:51 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-07-09 13:04:51 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-07-09 13:04:51 - agent_logger - INFO - [llm_factory.py:28] - Initializing local Ollama LLM Provider...
+2026-07-09 13:04:51 - agent_logger - INFO - [ollama_client.py:20] - Ollama is running locally. Available models: ['qwen2.5:0.5b']
+2026-07-09 13:04:51 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-07-09 13:06:43 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Project Proposal
+2026-07-09 13:06:43 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Objectives', 'Background', 'Main Content', 'Recommendations', 'Risks & Mitigations', 'Timeline', 'Conclusion']
+2026-07-09 13:06:43 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-07-09 13:06:43 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Project Proposal
+2026-07-09 13:06:44 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ["{'name': 'The e-commerce company has a budget of $50,000 for the AI-powered customer support chatbot implementation.', 'description': 'This assumption sets a realistic minimum budget requirement.'}", "{'name': 'The e-commerce company requires an AI-powered customer support chatbot that can handle up to 10,000 customer inquiries per day.', 'description': 'This assumption specifies the primary functionality and capacity of the chatbot.'}", "{'name': 'The e-commerce company has a team of 5 developers with expertise in natural language processing (NLP) and machine learning.', 'description': 'This assumption outlines the technical skills required for the project.'}", "{'name': 'The e-commerce company plans to launch the chatbot within 6 months from now.', 'description': 'This assumption sets a realistic timeline for the implementation.'}", "{'name': 'The e-commerce company has access to an existing customer support system that can be integrated with the new AI-powered chatbot.', 'description': 'This assumption ensures compatibility and integration of the chatbot with the current system.'}"]
+2026-07-09 13:06:44 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-07-09 13:06:45 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand request', 'Extract objectives', 'Identify document type', 'Determine required sections', 'Create assumptions', 'Generate outline', 'Generate content', 'Format document', 'Validate document']
+2026-07-09 13:06:45 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 9 tasks sequentially.
+2026-07-09 13:06:45 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand request
+2026-07-09 13:06:45 - agent_logger - INFO - [executor.py:35] - Task 'Understand request' executed successfully.
+2026-07-09 13:06:45 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract objectives
+2026-07-09 13:06:45 - agent_logger - INFO - [executor.py:35] - Task 'Extract objectives' executed successfully.
+2026-07-09 13:06:45 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify document type
+2026-07-09 13:06:45 - agent_logger - INFO - [executor.py:35] - Task 'Identify document type' executed successfully.
+2026-07-09 13:06:45 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine required sections
+2026-07-09 13:06:45 - agent_logger - INFO - [executor.py:35] - Task 'Determine required sections' executed successfully.
+2026-07-09 13:06:45 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions
+2026-07-09 13:06:45 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions' executed successfully.
+2026-07-09 13:06:45 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate outline
+2026-07-09 13:06:45 - agent_logger - INFO - [executor.py:43] - Generating content for 9 sections...
+2026-07-09 13:06:45 - agent_logger - INFO - [executor.py:55] - Generating section: Title Page
+2026-07-09 13:08:49 - agent_logger - INFO - [executor.py:55] - Generating section: Executive Summary
+2026-07-09 13:08:52 - agent_logger - INFO - [executor.py:55] - Generating section: Objectives
+2026-07-09 13:10:56 - agent_logger - INFO - [executor.py:55] - Generating section: Background
+2026-07-09 13:13:02 - agent_logger - INFO - [executor.py:55] - Generating section: Main Content
+2026-07-09 13:15:09 - agent_logger - INFO - [executor.py:55] - Generating section: Recommendations
+2026-07-09 13:15:11 - agent_logger - INFO - [executor.py:55] - Generating section: Risks & Mitigations
+2026-07-09 13:15:12 - agent_logger - INFO - [executor.py:55] - Generating section: Timeline
+2026-07-09 13:17:16 - agent_logger - INFO - [executor.py:55] - Generating section: Conclusion
+2026-07-09 13:17:17 - agent_logger - INFO - [logger.py:82] - Executing Task 7: Generate content
+2026-07-09 13:17:17 - agent_logger - INFO - [executor.py:43] - Generating content for 9 sections...
+2026-07-09 13:17:17 - agent_logger - INFO - [executor.py:55] - Generating section: Title Page
+2026-07-09 13:17:21 - agent_logger - INFO - [executor.py:55] - Generating section: Executive Summary
+2026-07-09 13:17:24 - agent_logger - INFO - [executor.py:55] - Generating section: Objectives
+2026-07-09 13:17:26 - agent_logger - INFO - [executor.py:55] - Generating section: Background
+2026-07-09 13:17:27 - agent_logger - INFO - [executor.py:55] - Generating section: Main Content
+2026-07-09 13:17:29 - agent_logger - INFO - [executor.py:55] - Generating section: Recommendations
+2026-07-09 13:17:31 - agent_logger - INFO - [executor.py:55] - Generating section: Risks & Mitigations
+2026-07-09 13:17:33 - agent_logger - INFO - [executor.py:55] - Generating section: Timeline
+2026-07-09 13:17:34 - agent_logger - INFO - [executor.py:55] - Generating section: Conclusion
+2026-07-09 13:17:37 - agent_logger - INFO - [logger.py:82] - Executing Task 8: Format document
+2026-07-09 13:17:37 - agent_logger - INFO - [executor.py:28] - Preparing formatting styles, typography, and page numbers.
+2026-07-09 13:17:37 - agent_logger - INFO - [logger.py:82] - Executing Task 9: Validate document
+2026-07-09 13:17:37 - agent_logger - INFO - [executor.py:30] - Initiating structural and file presence checks.
+2026-07-09 13:17:37 - agent_logger - INFO - [logger.py:70] - [STEP] Document Generation - Compiling markdown to styled Word Document.
+2026-07-09 13:17:37 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-07-09 13:17:37 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/project_proposal_1783583257.docx
+2026-07-09 13:17:37 - agent_logger - INFO - [logger.py:70] - [STEP] Reflection Phase - Auditing document quality with LLM Self-Check.
+2026-07-09 13:17:37 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-07-09 13:17:38 - agent_logger - INFO - [reflection.py:48] - Reflection complete. Status: PASS. Missing: []
+2026-07-09 13:17:38 - agent_logger - INFO - [logger.py:70] - [STEP] Verification - Validating final document file status.
+2026-07-09 13:17:38 - agent_logger - INFO - [validator.py:17] - Validation succeeded: File generated_docs/project_proposal_1783583257.docx exists and is 41400 bytes.
+2026-07-09 13:17:38 - agent_logger - INFO - [workflow.py:134] - Generating final brief document summary...
+2026-07-09 13:17:39 - agent_logger - INFO - [logger.py:94] - Execution completed successfully.

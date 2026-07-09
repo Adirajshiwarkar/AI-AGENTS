@@ -1,0 +1,26 @@
+# Python virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local configuration and API keys
+.env
+.env.local
+
+# Generated document artifacts
+generated_docs/
+*.docx
+
+# OS specific files
+.DS_Store
+Thumbs.db
