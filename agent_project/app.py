@@ -3,13 +3,14 @@ import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 warnings.filterwarnings("ignore", module="starlette")
 
-from fastapi import FastAPI, Request, status
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, Request, status, HTTPException
+from fastapi.responses import JSONResponse, FileResponse
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
 from api.routes import router as agent_router
+from api.auth import router as auth_router
 from utils.logger import logger
 
 # Load environment variables
@@ -30,8 +31,24 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Register Agent Routing
+# Register Agent and Auth Routing
 app.include_router(agent_router)
+app.include_router(auth_router)
+
+@app.get("/download/{filename}", tags=["General"])
+async def download_file(filename: str):
+    """Serve generated docx files."""
+    safe_filename = os.path.basename(filename)
+    output_dir = "/tmp/generated_docs" if os.getenv("VERCEL") else "generated_docs"
+    file_path = os.path.join(output_dir, safe_filename)
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail="File not found")
+    return FileResponse(
+        file_path,
+        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        filename=safe_filename
+    )
+
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):

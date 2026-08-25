@@ -11,3 +11,5 @@ class AgentResponse(BaseModel):
     assumptions: List[str]
     reflection_result: Dict[str, Any]
     execution_time: str
+    sections_content: Optional[Dict[str, str]] = None
+

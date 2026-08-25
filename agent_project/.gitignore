@@ -1,0 +1,16 @@
+# Local SQLite database
+users.db
+
+# Python virtual environments & cache
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Local environment variables
+.env
+.env.local
+
+# Generated documents
+generated_docs/
+*.docx

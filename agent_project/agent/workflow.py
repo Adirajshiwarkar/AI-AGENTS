@@ -107,7 +107,8 @@ class AgentWorkflow:
                 "document_location": state.document_path,  # Provided for strict output format compatibility
                 "assumptions": state.assumptions,
                 "reflection_result": state.reflection_result,
-                "execution_time": state.execution_time
+                "execution_time": state.execution_time,
+                "sections_content": state.section_contents
             }
 
         except Exception as e:
@@ -126,7 +127,8 @@ class AgentWorkflow:
                     "missing_sections": [],
                     "improvements": [f"Execution interrupted by error: {str(e)}"]
                 },
-                "execution_time": timer.get_duration_str()
+                "execution_time": timer.get_duration_str(),
+                "sections_content": state.section_contents if hasattr(state, "section_contents") else {}
             }
 
     def _generate_brief_summary(self, state: AgentState) -> str:

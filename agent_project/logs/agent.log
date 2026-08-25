@@ -985,3 +985,387 @@
 2026-07-09 13:17:38 - agent_logger - INFO - [validator.py:17] - Validation succeeded: File generated_docs/project_proposal_1783583257.docx exists and is 41400 bytes.
 2026-07-09 13:17:38 - agent_logger - INFO - [workflow.py:134] - Generating final brief document summary...
 2026-07-09 13:17:39 - agent_logger - INFO - [logger.py:94] - Execution completed successfully.
+2026-08-24 11:36:55 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-08-24 11:36:55 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-08-24 11:36:55 - agent_logger - INFO - [llm_factory.py:28] - Initializing local Ollama LLM Provider...
+2026-08-24 11:36:55 - agent_logger - INFO - [ollama_client.py:20] - Ollama is running locally. Available models: ['nova-cybernetics:latest', 'qwen2.5:0.5b']
+2026-08-24 11:36:55 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-08-24 11:36:58 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Project Proposal
+2026-08-24 11:36:58 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Objectives', 'Background', 'Main Content', 'Recommendations', 'Risks & Mitigations', 'Timeline', 'Conclusion']
+2026-08-24 11:36:58 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-08-24 11:36:58 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Project Proposal
+2026-08-24 11:36:59 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ["{'name': 'Assumption 1: The AI chatbot will be developed and deployed in the next quarter.', 'description': 'The project team will have a clear timeline for the development and deployment of the AI chatbot.'}", "{'name': 'Assumption 2: The AI chatbot will integrate with the existing customer support system.', 'description': 'The AI chatbot will be integrated seamlessly into the customer support system to provide real-time assistance.'}", "{'name': 'Assumption 3: The AI chatbot will have a high level of accuracy and reliability.', 'description': 'The AI chatbot must meet or exceed industry standards for accuracy and reliability.'}", "{'name': 'Assumption 4: The AI chatbot will be able to handle multiple customer inquiries simultaneously.', 'description': 'The AI chatbot should be capable of handling a high volume of customer inquiries efficiently.'}", "{'name': 'Assumption 5: The AI chatbot will have a user-friendly interface and natural language processing capabilities.', 'description': 'The AI chatbot must provide an intuitive and natural user experience, allowing customers to interact with it easily.'}", "{'name': 'Assumption 6: The AI chatbot will be able to learn from customer interactions and improve over time.', 'description': 'The AI chatbot should continuously adapt and improve based on customer feedback and usage patterns.'}"]
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-08-24 11:36:59 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand the project requirements', 'Identify the main objectives of the project', 'Determine the sections to include in the project proposal', 'Create an executive summary and background section', 'Outline the main content of the project proposal', 'Include recommendations for stakeholders', 'Prepare a timeline for the project', 'Write the conclusion section of the project proposal', 'Format the document as a project proposal', 'Validate the document against the requirements']
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 10 tasks sequentially.
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand the project requirements
+2026-08-24 11:36:59 - agent_logger - INFO - [executor.py:35] - Task 'Understand the project requirements' executed successfully.
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Identify the main objectives of the project
+2026-08-24 11:36:59 - agent_logger - INFO - [executor.py:35] - Task 'Identify the main objectives of the project' executed successfully.
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Determine the sections to include in the project proposal
+2026-08-24 11:36:59 - agent_logger - INFO - [executor.py:35] - Task 'Determine the sections to include in the project proposal' executed successfully.
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Create an executive summary and background section
+2026-08-24 11:36:59 - agent_logger - INFO - [executor.py:35] - Task 'Create an executive summary and background section' executed successfully.
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Outline the main content of the project proposal
+2026-08-24 11:36:59 - agent_logger - INFO - [executor.py:35] - Task 'Outline the main content of the project proposal' executed successfully.
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Include recommendations for stakeholders
+2026-08-24 11:36:59 - agent_logger - INFO - [executor.py:35] - Task 'Include recommendations for stakeholders' executed successfully.
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:82] - Executing Task 7: Prepare a timeline for the project
+2026-08-24 11:36:59 - agent_logger - INFO - [executor.py:35] - Task 'Prepare a timeline for the project' executed successfully.
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:82] - Executing Task 8: Write the conclusion section of the project proposal
+2026-08-24 11:36:59 - agent_logger - INFO - [executor.py:35] - Task 'Write the conclusion section of the project proposal' executed successfully.
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:82] - Executing Task 9: Format the document as a project proposal
+2026-08-24 11:36:59 - agent_logger - INFO - [executor.py:35] - Task 'Format the document as a project proposal' executed successfully.
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:82] - Executing Task 10: Validate the document against the requirements
+2026-08-24 11:36:59 - agent_logger - INFO - [executor.py:30] - Initiating structural and file presence checks.
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:70] - [STEP] Document Generation - Compiling markdown to styled Word Document.
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-08-24 11:36:59 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/project_proposal_1787551619.docx
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:70] - [STEP] Reflection Phase - Auditing document quality with LLM Self-Check.
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-08-24 11:36:59 - agent_logger - INFO - [reflection.py:48] - Reflection complete. Status: FAIL. Missing: []
+2026-08-24 11:36:59 - agent_logger - INFO - [logger.py:70] - [STEP] Regeneration Loop - Document failed check. Regenerating sections: ['Title Page', 'Executive Summary', 'Objectives', 'Background', 'Main Content', 'Recommendations', 'Risks & Mitigations', 'Timeline', 'Conclusion']
+2026-08-24 11:36:59 - agent_logger - INFO - [executor.py:82] - Regenerating failed sections: ['Title Page', 'Executive Summary', 'Objectives', 'Background', 'Main Content', 'Recommendations', 'Risks & Mitigations', 'Timeline', 'Conclusion']
+2026-08-24 11:36:59 - agent_logger - INFO - [executor.py:85] - Regenerating section: Title Page
+2026-08-24 11:47:46 - agent_logger - INFO - [test_agent.py:77] - =========================================
+2026-08-24 11:47:46 - agent_logger - INFO - [test_agent.py:78] - TESTING VALIDATION RULES
+2026-08-24 11:47:46 - agent_logger - INFO - [test_agent.py:79] - =========================================
+2026-08-24 11:47:46 - agent_logger - WARNING - [app.py:62] - Validation error on /agent: [{'field': 'body.request', 'message': 'Value error, Request must not be empty or blank.'}]
+2026-08-24 11:47:46 - agent_logger - INFO - [test_agent.py:84] - Empty request status (expected 422): 422
+2026-08-24 11:47:46 - agent_logger - WARNING - [app.py:62] - Validation error on /agent: [{'field': 'body.request', 'message': 'Value error, Request is too short. Please provide a more descriptive prompt (minimum 10 characters).'}]
+2026-08-24 11:47:46 - agent_logger - INFO - [test_agent.py:90] - Short request status (expected 422): 422
+2026-08-24 11:47:46 - agent_logger - INFO - [test_agent.py:92] - Validation tests passed successfully.
+
+2026-08-24 11:47:46 - agent_logger - INFO - [test_agent.py:18] - =========================================
+2026-08-24 11:47:46 - agent_logger - INFO - [test_agent.py:19] - TESTING EXAMPLE 1: AI Chatbot Proposal
+2026-08-24 11:47:46 - agent_logger - INFO - [test_agent.py:20] - =========================================
+2026-08-24 11:47:46 - agent_logger - INFO - [routes.py:40] - Received API request: 'Generate a project proposal for implementing an AI chatbot for customer support.'
+2026-08-24 11:47:46 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-08-24 11:47:46 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-08-24 11:47:46 - agent_logger - INFO - [llm_factory.py:28] - Initializing local Ollama LLM Provider...
+2026-08-24 11:47:46 - agent_logger - INFO - [ollama_client.py:20] - Ollama is running locally. Available models: ['nova-cybernetics:latest', 'qwen2.5:0.5b']
+2026-08-24 11:47:46 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-08-24 11:47:48 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Project Proposal
+2026-08-24 11:47:48 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Objectives', 'Background', 'Main Content', 'Recommendations', 'Risks & Mitigations', 'Timeline', 'Conclusion']
+2026-08-24 11:47:48 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-08-24 11:47:48 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Project Proposal
+2026-08-24 11:47:49 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ["{'name': 'Assumption 1: The AI chatbot will be developed using a specific programming language and framework.', 'description': 'The AI chatbot should use Python or another suitable language for its development.'}", '{\'name\': "Assumption 2: The AI chatbot will have access to the customer support system\'s data.", \'description\': \'The AI chatbot must be able to retrieve and analyze customer data from the system.\'}', '{\'name\': \'Assumption 3: The AI chatbot will be integrated with the existing CRM system for seamless integration.\', \'description\': "The AI chatbot should be compatible with the customer support system\'s CRM system."}', "{'name': 'Assumption 4: The AI chatbot will have a specific level of expertise in natural language processing (NLP) and machine learning.', 'description': 'The AI chatbot must have the necessary skills to understand and respond to customer inquiries using NLP techniques.'}", "{'name': 'Assumption 5: The AI chatbot will be deployed on a cloud-based platform with high availability and scalability.', 'description': 'The AI chatbot should be accessible from anywhere in the world, ensuring high availability and scalability of the system.'}", "{'name': 'Assumption 6: The AI chatbot will have access to real-time customer feedback for continuous improvement.', 'description': 'The AI chatbot must be able to receive and analyze customer feedback to improve its performance.'}"]
+2026-08-24 11:47:49 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-08-24 11:47:50 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand the project proposal requirements', 'Identify the sections needed in the project proposal', 'Create an outline based on the identified sections', 'Generate content for the project proposal', 'Format and review the content to ensure clarity and coherence', 'Ensure all required sections are included in the final document']
+2026-08-24 11:47:50 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 6 tasks sequentially.
+2026-08-24 11:47:50 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand the project proposal requirements
+2026-08-24 11:47:50 - agent_logger - INFO - [executor.py:35] - Task 'Understand the project proposal requirements' executed successfully.
+2026-08-24 11:47:50 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Identify the sections needed in the project proposal
+2026-08-24 11:47:50 - agent_logger - INFO - [executor.py:35] - Task 'Identify the sections needed in the project proposal' executed successfully.
+2026-08-24 11:47:50 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Create an outline based on the identified sections
+2026-08-24 11:47:50 - agent_logger - INFO - [executor.py:35] - Task 'Create an outline based on the identified sections' executed successfully.
+2026-08-24 11:47:50 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Generate content for the project proposal
+2026-08-24 11:47:50 - agent_logger - INFO - [executor.py:43] - Generating content for 9 sections...
+2026-08-24 11:47:50 - agent_logger - INFO - [executor.py:55] - Generating section: Title Page
+2026-08-24 11:47:52 - agent_logger - INFO - [executor.py:55] - Generating section: Executive Summary
+2026-08-24 11:47:54 - agent_logger - INFO - [executor.py:55] - Generating section: Objectives
+2026-08-24 11:47:55 - agent_logger - INFO - [executor.py:55] - Generating section: Background
+2026-08-24 11:47:56 - agent_logger - INFO - [executor.py:55] - Generating section: Main Content
+2026-08-24 11:50:05 - agent_logger - INFO - [executor.py:55] - Generating section: Recommendations
+2026-08-24 11:52:19 - agent_logger - INFO - [executor.py:55] - Generating section: Risks & Mitigations
+2026-08-24 11:54:37 - agent_logger - INFO - [executor.py:55] - Generating section: Timeline
+2026-08-24 11:55:06 - agent_logger - INFO - [executor.py:55] - Generating section: Conclusion
+2026-08-24 11:55:07 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Format and review the content to ensure clarity and coherence
+2026-08-24 11:55:07 - agent_logger - INFO - [executor.py:35] - Task 'Format and review the content to ensure clarity and coherence' executed successfully.
+2026-08-24 11:55:07 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Ensure all required sections are included in the final document
+2026-08-24 11:55:07 - agent_logger - INFO - [executor.py:35] - Task 'Ensure all required sections are included in the final document' executed successfully.
+2026-08-24 11:55:07 - agent_logger - INFO - [logger.py:70] - [STEP] Document Generation - Compiling markdown to styled Word Document.
+2026-08-24 11:55:07 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-08-24 11:55:10 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/project_proposal_1787552707.docx
+2026-08-24 11:55:10 - agent_logger - INFO - [logger.py:70] - [STEP] Reflection Phase - Auditing document quality with LLM Self-Check.
+2026-08-24 11:55:10 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-08-24 11:55:11 - agent_logger - INFO - [reflection.py:48] - Reflection complete. Status: PASS. Missing: []
+2026-08-24 11:55:11 - agent_logger - INFO - [logger.py:70] - [STEP] Verification - Validating final document file status.
+2026-08-24 11:55:11 - agent_logger - INFO - [validator.py:17] - Validation succeeded: File generated_docs/project_proposal_1787552707.docx exists and is 62588 bytes.
+2026-08-24 11:55:11 - agent_logger - INFO - [workflow.py:136] - Generating final brief document summary...
+2026-08-24 11:55:12 - agent_logger - INFO - [logger.py:94] - Execution completed successfully.
+2026-08-24 11:55:12 - agent_logger - INFO - [test_agent.py:28] - Response Status Code: 200
+2026-08-24 11:55:12 - agent_logger - INFO - [test_agent.py:32] - Response JSON keys: ['status', 'summary', 'execution_plan', 'completed_tasks', 'document_path', 'document_location', 'assumptions', 'reflection_result', 'execution_time', 'sections_content']
+2026-08-24 11:55:12 - agent_logger - INFO - [test_agent.py:33] - Execution Time: 446.17 seconds
+2026-08-24 11:55:12 - agent_logger - INFO - [test_agent.py:34] - Document Saved At: generated_docs/project_proposal_1787552707.docx
+2026-08-24 11:55:12 - agent_logger - INFO - [test_agent.py:45] - Example 1 passed successfully.
+
+2026-08-24 11:55:12 - agent_logger - INFO - [test_agent.py:49] - =========================================
+2026-08-24 11:55:12 - agent_logger - INFO - [test_agent.py:50] - TESTING EXAMPLE 2: ERP Legacy Migration
+2026-08-24 11:55:12 - agent_logger - INFO - [test_agent.py:51] - =========================================
+2026-08-24 11:55:12 - agent_logger - INFO - [routes.py:40] - Received API request: 'We need a technical implementation plan for migrating our legacy monolithic ERP to microservices in six months with a small engineering team and uncertain budget. Make reasonable assumptions.'
+2026-08-24 11:55:12 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-08-24 11:55:12 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-08-24 11:55:12 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-08-24 11:55:13 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Technical Implementation Plan
+2026-08-24 11:55:13 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Executive Summary', 'Introduction', 'Objectives', 'Background', 'Technology Stack', 'Migrating Legacy ERP to Microservices', 'Assumptions', 'Risk Analysis', 'Timeline', 'Budget Breakdown']
+2026-08-24 11:55:13 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-08-24 11:55:13 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Technical Implementation Plan
+2026-08-24 11:55:13 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ["{'name': 'The current legacy ERP is a monolithic system with complex integration patterns and data silos.', 'reason': 'This assumption indicates that the current system has significant complexity, making it challenging to migrate to microservices.'}", "{'name': 'We have limited resources and budget for this project.', 'reason': 'The assumption suggests that we are constrained by time and financial means, which is crucial for a successful implementation.'}", "{'name': 'Our current team lacks the technical expertise to effectively manage the migration process.', 'reason': 'This assumption highlights the need for a well-structured team with the right skills to handle the transition smoothly.'}", '{\'name\': "We are uncertain about our budget and timeline, which will impact the project\'s success.", \'reason\': \'The assumption indicates that we have no clear idea of how long it will take to complete the migration or what resources we need.\'}']
+2026-08-24 11:55:13 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-08-24 11:55:14 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand request', 'Extract objectives', 'Identify document type', 'Determine required sections', 'Create assumptions', 'Generate outline', 'Generate content', 'Format document', 'Validate document']
+2026-08-24 11:55:14 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 9 tasks sequentially.
+2026-08-24 11:55:14 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand request
+2026-08-24 11:55:14 - agent_logger - INFO - [executor.py:35] - Task 'Understand request' executed successfully.
+2026-08-24 11:55:14 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract objectives
+2026-08-24 11:55:14 - agent_logger - INFO - [executor.py:35] - Task 'Extract objectives' executed successfully.
+2026-08-24 11:55:14 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify document type
+2026-08-24 11:55:14 - agent_logger - INFO - [executor.py:35] - Task 'Identify document type' executed successfully.
+2026-08-24 11:55:14 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine required sections
+2026-08-24 11:55:14 - agent_logger - INFO - [executor.py:35] - Task 'Determine required sections' executed successfully.
+2026-08-24 11:55:14 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions
+2026-08-24 11:55:14 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions' executed successfully.
+2026-08-24 11:55:14 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate outline
+2026-08-24 11:55:14 - agent_logger - INFO - [executor.py:43] - Generating content for 10 sections...
+2026-08-24 11:55:14 - agent_logger - INFO - [executor.py:55] - Generating section: Executive Summary
+2026-08-24 11:55:15 - agent_logger - INFO - [executor.py:55] - Generating section: Introduction
+2026-08-24 11:55:16 - agent_logger - INFO - [executor.py:55] - Generating section: Objectives
+2026-08-24 11:55:17 - agent_logger - INFO - [executor.py:55] - Generating section: Background
+2026-08-24 11:55:18 - agent_logger - INFO - [executor.py:55] - Generating section: Technology Stack
+2026-08-24 11:55:20 - agent_logger - INFO - [executor.py:55] - Generating section: Migrating Legacy ERP to Microservices
+2026-08-24 11:55:25 - agent_logger - INFO - [executor.py:55] - Generating section: Assumptions
+2026-08-24 11:55:30 - agent_logger - INFO - [executor.py:55] - Generating section: Risk Analysis
+2026-08-24 11:55:34 - agent_logger - INFO - [executor.py:55] - Generating section: Timeline
+2026-08-24 11:55:39 - agent_logger - INFO - [executor.py:55] - Generating section: Budget Breakdown
+2026-08-24 11:55:44 - agent_logger - INFO - [logger.py:82] - Executing Task 7: Generate content
+2026-08-24 11:55:44 - agent_logger - INFO - [executor.py:43] - Generating content for 10 sections...
+2026-08-24 11:55:44 - agent_logger - INFO - [executor.py:55] - Generating section: Executive Summary
+2026-08-24 11:55:46 - agent_logger - INFO - [executor.py:55] - Generating section: Introduction
+2026-08-24 11:55:47 - agent_logger - INFO - [executor.py:55] - Generating section: Objectives
+2026-08-24 11:55:49 - agent_logger - INFO - [executor.py:55] - Generating section: Background
+2026-08-24 11:55:50 - agent_logger - INFO - [executor.py:55] - Generating section: Technology Stack
+2026-08-24 11:55:52 - agent_logger - INFO - [executor.py:55] - Generating section: Migrating Legacy ERP to Microservices
+2026-08-24 11:55:55 - agent_logger - INFO - [executor.py:55] - Generating section: Assumptions
+2026-08-24 11:55:57 - agent_logger - INFO - [executor.py:55] - Generating section: Risk Analysis
+2026-08-24 11:55:59 - agent_logger - INFO - [executor.py:55] - Generating section: Timeline
+2026-08-24 11:56:01 - agent_logger - INFO - [executor.py:55] - Generating section: Budget Breakdown
+2026-08-24 11:56:02 - agent_logger - INFO - [logger.py:82] - Executing Task 8: Format document
+2026-08-24 11:56:02 - agent_logger - INFO - [executor.py:28] - Preparing formatting styles, typography, and page numbers.
+2026-08-24 11:56:02 - agent_logger - INFO - [logger.py:82] - Executing Task 9: Validate document
+2026-08-24 11:56:02 - agent_logger - INFO - [executor.py:30] - Initiating structural and file presence checks.
+2026-08-24 11:56:02 - agent_logger - INFO - [logger.py:70] - [STEP] Document Generation - Compiling markdown to styled Word Document.
+2026-08-24 11:56:02 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-08-24 11:56:02 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/technical_implementation_plan_1787552762.docx
+2026-08-24 11:56:02 - agent_logger - INFO - [logger.py:70] - [STEP] Reflection Phase - Auditing document quality with LLM Self-Check.
+2026-08-24 11:56:02 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-08-24 11:56:03 - agent_logger - ERROR - [helpers.py:32] - Failed to parse JSON: Expecting value: line 1 column 1 (char 0). Raw content length: 1739. Cleaned content: PASS
+
+The technical implementation plan is well-structured and covers all necessary sections. However, there are a few areas that need improvement:
+
+1. **Introduction**: The introduction section shoul
+2026-08-24 11:56:03 - agent_logger - ERROR - [reflection.py:54] - Reflection LLM query failed: Parsed reflection JSON did not contain status field.. Defaulting to PASS.
+2026-08-24 11:56:03 - agent_logger - INFO - [logger.py:70] - [STEP] Verification - Validating final document file status.
+2026-08-24 11:56:03 - agent_logger - INFO - [validator.py:17] - Validation succeeded: File generated_docs/technical_implementation_plan_1787552762.docx exists and is 41596 bytes.
+2026-08-24 11:56:03 - agent_logger - INFO - [workflow.py:136] - Generating final brief document summary...
+2026-08-24 11:56:05 - agent_logger - INFO - [logger.py:94] - Execution completed successfully.
+2026-08-24 11:56:05 - agent_logger - INFO - [test_agent.py:59] - Response Status Code: 200
+2026-08-24 11:56:05 - agent_logger - INFO - [test_agent.py:63] - Response JSON keys: ['status', 'summary', 'execution_plan', 'completed_tasks', 'document_path', 'document_location', 'assumptions', 'reflection_result', 'execution_time', 'sections_content']
+2026-08-24 11:56:05 - agent_logger - INFO - [test_agent.py:64] - Execution Time: 52.81 seconds
+2026-08-24 11:56:05 - agent_logger - INFO - [test_agent.py:65] - Document Saved At: generated_docs/technical_implementation_plan_1787552762.docx
+2026-08-24 11:56:05 - agent_logger - INFO - [test_agent.py:66] - Generated Assumptions: ["{'name': 'The current legacy ERP is a monolithic system with complex integration patterns and data silos.', 'reason': 'This assumption indicates that the current system has significant complexity, making it challenging to migrate to microservices.'}", "{'name': 'We have limited resources and budget for this project.', 'reason': 'The assumption suggests that we are constrained by time and financial means, which is crucial for a successful implementation.'}", "{'name': 'Our current team lacks the technical expertise to effectively manage the migration process.', 'reason': 'This assumption highlights the need for a well-structured team with the right skills to handle the transition smoothly.'}", '{\'name\': "We are uncertain about our budget and timeline, which will impact the project\'s success.", \'reason\': \'The assumption indicates that we have no clear idea of how long it will take to complete the migration or what resources we need.\'}']
+2026-08-24 11:56:05 - agent_logger - INFO - [test_agent.py:73] - Example 2 passed successfully.
+
+2026-08-24 11:56:05 - agent_logger - INFO - [test_agent.py:100] - ALL INTEGRATION TESTS PASSED SUCCESSFULLY!
+2026-08-24 12:03:44 - agent_logger - WARNING - [app.py:62] - Validation error on /auth/register: [{'field': 'body.username', 'message': 'Value error, Username must be alphanumeric.'}]
+2026-08-24 12:04:14 - agent_logger - WARNING - [app.py:62] - Validation error on /auth/register: [{'field': 'body.username', 'message': 'Value error, Username must be alphanumeric.'}]
+2026-08-24 12:05:03 - agent_logger - WARNING - [app.py:62] - Validation error on /auth/login: [{'field': 'body.username', 'message': 'Value error, Username must be alphanumeric.'}]
+2026-08-24 12:08:05 - agent_logger - WARNING - [app.py:62] - Validation error on /auth/register: [{'field': 'body.username', 'message': 'Value error, Username must be alphanumeric or a valid email address.'}]
+2026-08-24 12:19:18 - agent_logger - INFO - [routes.py:100] - Received API request for streaming: 'create me an comprehensive proposal for the ai based marketing apllication that generates banner,videos on the basis of your compnay information'
+2026-08-24 12:19:18 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-08-24 12:19:18 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-08-24 12:19:18 - agent_logger - INFO - [llm_factory.py:28] - Initializing local Ollama LLM Provider...
+2026-08-24 12:19:18 - agent_logger - INFO - [ollama_client.py:20] - Ollama is running locally. Available models: ['nova-cybernetics:latest', 'qwen2.5:0.5b']
+2026-08-24 12:19:18 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-08-24 12:19:20 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Proposal
+2026-08-24 12:19:20 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Objectives', 'Background', 'Main Content', 'Recommendations', 'Risks & Mitigations', 'Timeline', 'Conclusion']
+2026-08-24 12:19:20 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-08-24 12:19:20 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Proposal
+2026-08-24 12:19:21 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ["{'name': 'Assumption 1: The company has a clear understanding of its target audience and the goals it wants to achieve with the AI-based marketing application.', 'description': 'This assumption ensures that the team understands the specific needs and objectives of the company, which will guide the development of the AI model.'}", "{'name': 'Assumption 2: The company has a budget for the AI-based marketing application.', 'description': 'This assumption indicates that the organization has sufficient financial resources to support the development and implementation of the AI model.'}", "{'name': 'Assumption 3: The company has access to the necessary technology infrastructure, including servers, databases, and APIs.', 'description': 'This assumption ensures that the team has the necessary hardware and software components to build and deploy the AI application.'}", "{'name': 'Assumption 4: The company has a clear understanding of the current marketing landscape and its competitors.', 'description': 'This assumption indicates that the organization has a comprehensive view of the market, which will help in identifying potential customers and optimizing the marketing strategy.'}", "{'name': 'Assumption 5: The team has access to relevant data and insights from previous campaigns.', 'description': 'This assumption ensures that the AI model can leverage existing customer data and past campaign performance to make informed decisions.'}", "{'name': 'Assumption 6: The company has a clear understanding of the impact of the AI-based marketing application on its business operations.', 'description': 'This assumption indicates that the organization understands how the AI model will affect their current business processes and strategies.'}"]
+2026-08-24 12:19:21 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-08-24 12:19:22 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand the request', 'Extract objectives', 'Identify document type', 'Determine required sections', 'Create assumptions', 'Generate outline', 'Generate content', 'Format document', 'Validate document']
+2026-08-24 12:19:22 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 9 tasks sequentially.
+2026-08-24 12:19:22 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand the request
+2026-08-24 12:19:22 - agent_logger - INFO - [executor.py:35] - Task 'Understand the request' executed successfully.
+2026-08-24 12:19:22 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract objectives
+2026-08-24 12:19:22 - agent_logger - INFO - [executor.py:35] - Task 'Extract objectives' executed successfully.
+2026-08-24 12:19:22 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify document type
+2026-08-24 12:19:22 - agent_logger - INFO - [executor.py:35] - Task 'Identify document type' executed successfully.
+2026-08-24 12:19:22 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine required sections
+2026-08-24 12:19:22 - agent_logger - INFO - [executor.py:35] - Task 'Determine required sections' executed successfully.
+2026-08-24 12:19:22 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions
+2026-08-24 12:19:22 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions' executed successfully.
+2026-08-24 12:19:22 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate outline
+2026-08-24 12:19:22 - agent_logger - INFO - [executor.py:43] - Generating content for 9 sections...
+2026-08-24 12:19:22 - agent_logger - INFO - [executor.py:55] - Generating section: Title Page
+2026-08-24 12:21:37 - agent_logger - INFO - [executor.py:55] - Generating section: Executive Summary
+2026-08-24 12:21:39 - agent_logger - INFO - [executor.py:55] - Generating section: Objectives
+2026-08-24 12:23:56 - agent_logger - INFO - [executor.py:55] - Generating section: Background
+2026-08-24 12:23:57 - agent_logger - INFO - [executor.py:55] - Generating section: Main Content
+2026-08-24 12:26:10 - agent_logger - INFO - [executor.py:55] - Generating section: Recommendations
+2026-08-24 12:26:13 - agent_logger - INFO - [executor.py:55] - Generating section: Risks & Mitigations
+2026-08-24 12:26:14 - agent_logger - INFO - [executor.py:55] - Generating section: Timeline
+2026-08-24 12:27:09 - agent_logger - INFO - [executor.py:55] - Generating section: Conclusion
+2026-08-24 12:27:12 - agent_logger - INFO - [logger.py:82] - Executing Task 7: Generate content
+2026-08-24 12:27:12 - agent_logger - INFO - [executor.py:43] - Generating content for 9 sections...
+2026-08-24 12:27:12 - agent_logger - INFO - [executor.py:55] - Generating section: Title Page
+2026-08-24 12:27:14 - agent_logger - INFO - [executor.py:55] - Generating section: Executive Summary
+2026-08-24 12:27:16 - agent_logger - INFO - [executor.py:55] - Generating section: Objectives
+2026-08-24 12:27:16 - agent_logger - INFO - [executor.py:55] - Generating section: Background
+2026-08-24 12:27:17 - agent_logger - INFO - [executor.py:55] - Generating section: Main Content
+2026-08-24 12:27:18 - agent_logger - INFO - [executor.py:55] - Generating section: Recommendations
+2026-08-24 12:27:18 - agent_logger - INFO - [executor.py:55] - Generating section: Risks & Mitigations
+2026-08-24 12:27:20 - agent_logger - INFO - [executor.py:55] - Generating section: Timeline
+2026-08-24 12:27:22 - agent_logger - INFO - [executor.py:55] - Generating section: Conclusion
+2026-08-24 12:27:23 - agent_logger - INFO - [logger.py:82] - Executing Task 8: Format document
+2026-08-24 12:27:23 - agent_logger - INFO - [executor.py:28] - Preparing formatting styles, typography, and page numbers.
+2026-08-24 12:27:23 - agent_logger - INFO - [logger.py:82] - Executing Task 9: Validate document
+2026-08-24 12:27:23 - agent_logger - INFO - [executor.py:30] - Initiating structural and file presence checks.
+2026-08-24 12:27:23 - agent_logger - INFO - [logger.py:70] - [STEP] Document Generation - Compiling markdown to styled Word Document.
+2026-08-24 12:27:23 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-08-24 12:27:23 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/business_proposal_1787554643.docx
+2026-08-24 12:27:23 - agent_logger - INFO - [logger.py:70] - [STEP] Reflection Phase - Auditing document quality with LLM Self-Check.
+2026-08-24 12:27:23 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-08-24 12:27:24 - agent_logger - INFO - [reflection.py:48] - Reflection complete. Status: FAIL. Missing: ['Banner Generation', 'Video Creation']
+2026-08-24 12:27:24 - agent_logger - INFO - [logger.py:70] - [STEP] Regeneration Loop - Document failed check. Regenerating sections: ['Banner Generation', 'Video Creation']
+2026-08-24 12:27:24 - agent_logger - INFO - [executor.py:82] - Regenerating failed sections: ['Banner Generation', 'Video Creation']
+2026-08-24 12:27:24 - agent_logger - INFO - [executor.py:85] - Regenerating section: Banner Generation
+2026-08-24 12:29:37 - agent_logger - INFO - [executor.py:113] - Successfully regenerated section: Banner Generation
+2026-08-24 12:29:37 - agent_logger - INFO - [executor.py:85] - Regenerating section: Video Creation
+2026-08-24 12:31:51 - agent_logger - INFO - [executor.py:113] - Successfully regenerated section: Video Creation
+2026-08-24 12:31:51 - agent_logger - INFO - [workflow.py:72] - Re-generating final Word Document with updated sections.
+2026-08-24 12:31:51 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-08-24 12:31:53 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/business_proposal_1787554643.docx
+2026-08-24 12:31:53 - agent_logger - INFO - [workflow.py:81] - Running post-regeneration sanity check.
+2026-08-24 12:31:53 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-08-24 12:31:53 - agent_logger - INFO - [reflection.py:48] - Reflection complete. Status: PASS. Missing: []
+2026-08-24 12:31:53 - agent_logger - INFO - [logger.py:70] - [STEP] Verification - Validating final document file status.
+2026-08-24 12:31:53 - agent_logger - INFO - [validator.py:17] - Validation succeeded: File generated_docs/business_proposal_1787554643.docx exists and is 66350 bytes.
+2026-08-24 12:31:53 - agent_logger - INFO - [workflow.py:136] - Generating final brief document summary...
+2026-08-24 12:31:55 - agent_logger - INFO - [logger.py:94] - Execution completed successfully.
+2026-08-24 15:59:16 - agent_logger - INFO - [routes.py:100] - Received API request for streaming: 'We need a technical implementation plan for migrating our legacy monolithic ERP to microservices in six months with a small engineering team and uncertain budget. Make reasonable assumptions.'
+2026-08-24 15:59:16 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-08-24 15:59:16 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-08-24 15:59:16 - agent_logger - INFO - [llm_factory.py:28] - Initializing local Ollama LLM Provider...
+2026-08-24 15:59:16 - agent_logger - INFO - [ollama_client.py:20] - Ollama is running locally. Available models: ['mistral:latest', 'nova-cybernetics:latest', 'qwen2.5:0.5b']
+2026-08-24 15:59:16 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-08-24 15:59:18 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Technical Implementation Plan
+2026-08-24 15:59:18 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Executive Summary', 'Introduction', 'Objectives', 'Background', 'Implementation Strategy', 'Risk Assessment', 'Budget Estimate', 'Timeline', 'Conclusion']
+2026-08-24 15:59:18 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-08-24 15:59:18 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Technical Implementation Plan
+2026-08-24 15:59:18 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ["{'name': 'We have a small engineering team and limited budget.', 'description': 'The team size is less than 5, and the budget is not significant enough to cover all the necessary changes.'}", '{\'name\': \'Our current system architecture supports legacy monolithic ERP.\', \'description\': "The existing system has a single database and no microservices yet. It\'s designed for a specific business model and data structure."}', "{'name': 'We are not familiar with the technical stack used by our current system.', 'description': 'We do not have enough information about the technology stack we will be using to migrate the ERP.'}", "{'name': 'Our team has experience in migrating legacy systems but lacks expertise in microservices architecture.', 'description': 'The team is familiar with a specific legacy system, but they lack knowledge of microservices and their implementation.'}"]
+2026-08-24 15:59:18 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-08-24 15:59:19 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand the request', 'Extract objectives', 'Identify document type', 'Determine required sections', 'Create assumptions', 'Generate outline', 'Generate content', 'Format document', 'Validate document']
+2026-08-24 15:59:19 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 9 tasks sequentially.
+2026-08-24 15:59:19 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand the request
+2026-08-24 15:59:19 - agent_logger - INFO - [executor.py:35] - Task 'Understand the request' executed successfully.
+2026-08-24 15:59:19 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract objectives
+2026-08-24 15:59:19 - agent_logger - INFO - [executor.py:35] - Task 'Extract objectives' executed successfully.
+2026-08-24 15:59:19 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify document type
+2026-08-24 15:59:19 - agent_logger - INFO - [executor.py:35] - Task 'Identify document type' executed successfully.
+2026-08-24 15:59:19 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine required sections
+2026-08-24 15:59:19 - agent_logger - INFO - [executor.py:35] - Task 'Determine required sections' executed successfully.
+2026-08-24 15:59:19 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions
+2026-08-24 15:59:19 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions' executed successfully.
+2026-08-24 15:59:19 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate outline
+2026-08-24 15:59:19 - agent_logger - INFO - [executor.py:43] - Generating content for 9 sections...
+2026-08-24 15:59:19 - agent_logger - INFO - [executor.py:55] - Generating section: Executive Summary
+2026-08-24 15:59:21 - agent_logger - INFO - [executor.py:55] - Generating section: Introduction
+2026-08-24 15:59:24 - agent_logger - INFO - [executor.py:55] - Generating section: Objectives
+2026-08-24 15:59:25 - agent_logger - INFO - [executor.py:55] - Generating section: Background
+2026-08-24 15:59:28 - agent_logger - INFO - [executor.py:55] - Generating section: Implementation Strategy
+2026-08-24 15:59:31 - agent_logger - INFO - [executor.py:55] - Generating section: Risk Assessment
+2026-08-24 15:59:34 - agent_logger - INFO - [executor.py:55] - Generating section: Budget Estimate
+2026-08-24 15:59:36 - agent_logger - INFO - [executor.py:55] - Generating section: Timeline
+2026-08-24 15:59:37 - agent_logger - INFO - [executor.py:55] - Generating section: Conclusion
+2026-08-24 15:59:40 - agent_logger - INFO - [logger.py:82] - Executing Task 7: Generate content
+2026-08-24 15:59:40 - agent_logger - INFO - [executor.py:43] - Generating content for 9 sections...
+2026-08-24 15:59:40 - agent_logger - INFO - [executor.py:55] - Generating section: Executive Summary
+2026-08-24 15:59:43 - agent_logger - INFO - [executor.py:55] - Generating section: Introduction
+2026-08-24 15:59:45 - agent_logger - INFO - [executor.py:55] - Generating section: Objectives
+2026-08-24 15:59:46 - agent_logger - INFO - [executor.py:55] - Generating section: Background
+2026-08-24 15:59:47 - agent_logger - INFO - [executor.py:55] - Generating section: Implementation Strategy
+2026-08-24 15:59:50 - agent_logger - INFO - [executor.py:55] - Generating section: Risk Assessment
+2026-08-24 15:59:53 - agent_logger - INFO - [executor.py:55] - Generating section: Budget Estimate
+2026-08-24 15:59:56 - agent_logger - INFO - [executor.py:55] - Generating section: Timeline
+2026-08-24 16:00:00 - agent_logger - INFO - [executor.py:55] - Generating section: Conclusion
+2026-08-24 16:00:03 - agent_logger - INFO - [logger.py:82] - Executing Task 8: Format document
+2026-08-24 16:00:03 - agent_logger - INFO - [executor.py:28] - Preparing formatting styles, typography, and page numbers.
+2026-08-24 16:00:03 - agent_logger - INFO - [logger.py:82] - Executing Task 9: Validate document
+2026-08-24 16:00:03 - agent_logger - INFO - [executor.py:30] - Initiating structural and file presence checks.
+2026-08-24 16:00:03 - agent_logger - INFO - [logger.py:70] - [STEP] Document Generation - Compiling markdown to styled Word Document.
+2026-08-24 16:00:03 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-08-24 16:00:03 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/technical_implementation_plan_1787567403.docx
+2026-08-24 16:00:03 - agent_logger - INFO - [logger.py:70] - [STEP] Reflection Phase - Auditing document quality with LLM Self-Check.
+2026-08-24 16:00:03 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-08-24 16:00:04 - agent_logger - ERROR - [helpers.py:32] - Failed to parse JSON: Expecting value: line 1 column 1 (char 0). Raw content length: 952. Cleaned content: PASS
+
+The technical implementation plan for migrating our legacy monolithic ERP to a microservices-based architecture within six months has been reviewed, containing no placeholders, sufficient detail
+2026-08-24 16:00:04 - agent_logger - ERROR - [reflection.py:54] - Reflection LLM query failed: Parsed reflection JSON did not contain status field.. Defaulting to PASS.
+2026-08-24 16:00:04 - agent_logger - INFO - [logger.py:70] - [STEP] Verification - Validating final document file status.
+2026-08-24 16:00:04 - agent_logger - INFO - [validator.py:17] - Validation succeeded: File generated_docs/technical_implementation_plan_1787567403.docx exists and is 43049 bytes.
+2026-08-24 16:00:04 - agent_logger - INFO - [workflow.py:136] - Generating final brief document summary...
+2026-08-24 16:00:05 - agent_logger - INFO - [logger.py:94] - Execution completed successfully.
+2026-08-24 16:01:55 - agent_logger - INFO - [routes.py:100] - Received API request for streaming: 'Create a standard operating procedure (SOP) for cybersecurity incident response in a medium-sized fintech company, detailing critical escalation paths.'
+2026-08-24 16:01:55 - agent_logger - INFO - [logger.py:70] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-08-24 16:01:55 - agent_logger - INFO - [logger.py:74] - Planning process started.
+2026-08-24 16:01:55 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-08-24 16:01:55 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Report
+2026-08-24 16:01:55 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Executive Summary', 'Introduction', 'Background', 'Methodology', 'Procedure', 'Conclusion']
+2026-08-24 16:01:55 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-08-24 16:01:55 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Report
+2026-08-24 16:01:56 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ["{'name': 'The company has a robust cybersecurity strategy and processes in place.', 'description': 'This assumption ensures that the company is well-prepared for potential cyber threats.'}", '{\'name\': "The company\'s IT infrastructure is highly available and resilient.", \'description\': \'This assumption guarantees that the company can quickly respond to any incident without disrupting operations.\'}', "{'name': 'The company has a dedicated cybersecurity team with sufficient resources.', 'description': 'This assumption ensures that the company has the necessary expertise and personnel to handle the response effectively.'}", '{\'name\': "The company\'s IT department is well-versed in incident response procedures.", \'description\': \'This assumption indicates that the company has a clear understanding of how to respond to cybersecurity incidents.\'}']
+2026-08-24 16:01:56 - agent_logger - INFO - [logger.py:78] - TODO list creation started.
+2026-08-24 16:01:56 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand request', 'Extract objectives', 'Identify document type', 'Determine required sections', 'Create assumptions', 'Generate outline', 'Generate content', 'Format document', 'Validate document']
+2026-08-24 16:01:56 - agent_logger - INFO - [logger.py:70] - [STEP] Execution Phase - Running 9 tasks sequentially.
+2026-08-24 16:01:56 - agent_logger - INFO - [logger.py:82] - Executing Task 1: Understand request
+2026-08-24 16:01:56 - agent_logger - INFO - [executor.py:35] - Task 'Understand request' executed successfully.
+2026-08-24 16:01:56 - agent_logger - INFO - [logger.py:82] - Executing Task 2: Extract objectives
+2026-08-24 16:01:56 - agent_logger - INFO - [executor.py:35] - Task 'Extract objectives' executed successfully.
+2026-08-24 16:01:56 - agent_logger - INFO - [logger.py:82] - Executing Task 3: Identify document type
+2026-08-24 16:01:56 - agent_logger - INFO - [executor.py:35] - Task 'Identify document type' executed successfully.
+2026-08-24 16:01:56 - agent_logger - INFO - [logger.py:82] - Executing Task 4: Determine required sections
+2026-08-24 16:01:56 - agent_logger - INFO - [executor.py:35] - Task 'Determine required sections' executed successfully.
+2026-08-24 16:01:56 - agent_logger - INFO - [logger.py:82] - Executing Task 5: Create assumptions
+2026-08-24 16:01:56 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions' executed successfully.
+2026-08-24 16:01:56 - agent_logger - INFO - [logger.py:82] - Executing Task 6: Generate outline
+2026-08-24 16:01:56 - agent_logger - INFO - [executor.py:43] - Generating content for 6 sections...
+2026-08-24 16:01:56 - agent_logger - INFO - [executor.py:55] - Generating section: Executive Summary
+2026-08-24 16:01:57 - agent_logger - INFO - [executor.py:55] - Generating section: Introduction
+2026-08-24 16:02:00 - agent_logger - INFO - [executor.py:55] - Generating section: Background
+2026-08-24 16:02:01 - agent_logger - INFO - [executor.py:55] - Generating section: Methodology
+2026-08-24 16:02:04 - agent_logger - INFO - [executor.py:55] - Generating section: Procedure
+2026-08-24 16:02:07 - agent_logger - INFO - [executor.py:55] - Generating section: Conclusion
+2026-08-24 16:02:10 - agent_logger - INFO - [logger.py:82] - Executing Task 7: Generate content
+2026-08-24 16:02:10 - agent_logger - INFO - [executor.py:43] - Generating content for 6 sections...
+2026-08-24 16:02:10 - agent_logger - INFO - [executor.py:55] - Generating section: Executive Summary
+2026-08-24 16:02:12 - agent_logger - INFO - [executor.py:55] - Generating section: Introduction
+2026-08-24 16:02:13 - agent_logger - INFO - [executor.py:55] - Generating section: Background
+2026-08-24 16:02:15 - agent_logger - INFO - [executor.py:55] - Generating section: Methodology
+2026-08-24 16:02:17 - agent_logger - INFO - [executor.py:55] - Generating section: Procedure
+2026-08-24 16:02:20 - agent_logger - INFO - [executor.py:55] - Generating section: Conclusion
+2026-08-24 16:02:22 - agent_logger - INFO - [logger.py:82] - Executing Task 8: Format document
+2026-08-24 16:02:22 - agent_logger - INFO - [executor.py:28] - Preparing formatting styles, typography, and page numbers.
+2026-08-24 16:02:22 - agent_logger - INFO - [logger.py:82] - Executing Task 9: Validate document
+2026-08-24 16:02:22 - agent_logger - INFO - [executor.py:30] - Initiating structural and file presence checks.
+2026-08-24 16:02:22 - agent_logger - INFO - [logger.py:70] - [STEP] Document Generation - Compiling markdown to styled Word Document.
+2026-08-24 16:02:22 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-08-24 16:02:22 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/business_report_1787567542.docx
+2026-08-24 16:02:22 - agent_logger - INFO - [logger.py:70] - [STEP] Reflection Phase - Auditing document quality with LLM Self-Check.
+2026-08-24 16:02:22 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-08-24 16:02:23 - agent_logger - INFO - [reflection.py:48] - Reflection complete. Status: FAIL. Missing: ['Section Name 1', 'Section Name 2']
+2026-08-24 16:02:23 - agent_logger - INFO - [logger.py:70] - [STEP] Regeneration Loop - Document failed check. Regenerating sections: ['Section Name 1', 'Section Name 2']
+2026-08-24 16:02:23 - agent_logger - INFO - [executor.py:82] - Regenerating failed sections: ['Section Name 1', 'Section Name 2']
+2026-08-24 16:02:23 - agent_logger - INFO - [executor.py:85] - Regenerating section: Section Name 1
+2026-08-24 16:02:26 - agent_logger - INFO - [executor.py:113] - Successfully regenerated section: Section Name 1
+2026-08-24 16:02:26 - agent_logger - INFO - [executor.py:85] - Regenerating section: Section Name 2
+2026-08-24 16:02:28 - agent_logger - INFO - [executor.py:113] - Successfully regenerated section: Section Name 2
+2026-08-24 16:02:28 - agent_logger - INFO - [workflow.py:72] - Re-generating final Word Document with updated sections.
+2026-08-24 16:02:28 - agent_logger - INFO - [logger.py:86] - Document generation started.
+2026-08-24 16:02:28 - agent_logger - INFO - [document_generator.py:101] - Document successfully saved to generated_docs/business_report_1787567542.docx
+2026-08-24 16:02:28 - agent_logger - INFO - [workflow.py:81] - Running post-regeneration sanity check.
+2026-08-24 16:02:28 - agent_logger - INFO - [logger.py:90] - Self-reflection process started.
+2026-08-24 16:02:29 - agent_logger - INFO - [reflection.py:48] - Reflection complete. Status: PASS. Missing: []
+2026-08-24 16:02:29 - agent_logger - INFO - [logger.py:70] - [STEP] Verification - Validating final document file status.
+2026-08-24 16:02:29 - agent_logger - INFO - [validator.py:17] - Validation succeeded: File generated_docs/business_report_1787567542.docx exists and is 41334 bytes.
+2026-08-24 16:02:29 - agent_logger - INFO - [workflow.py:136] - Generating final brief document summary...
+2026-08-24 16:02:30 - agent_logger - INFO - [logger.py:94] - Execution completed successfully.

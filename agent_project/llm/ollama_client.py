@@ -47,7 +47,11 @@ class OllamaProvider(LLMProvider):
             "messages": messages,
             "stream": False,
             "options": {
-                "temperature": 0.2
+                "temperature": 0.2,
+                "num_ctx": 2048,
+                "num_predict": 1000,  # Limit max generated tokens to speed up response
+                "num_thread": 6,      # Force optimal CPU core allocation
+                "mirostat": 0         # Disable Mirostat sampling for faster inference
             }
         }
         

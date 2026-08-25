@@ -43,16 +43,17 @@ def setup_logger(name: str = "agent_logger") -> logging.Logger:
     console_handler.setFormatter(CustomFormatter())
     logger.addHandler(console_handler)
 
-    # File handler
-    os.makedirs("logs", exist_ok=True)
-    file_handler = logging.FileHandler("logs/agent.log", encoding="utf-8")
-    file_handler.setLevel(logging.DEBUG)
-    file_formatter = logging.Formatter(
-        "%(asctime)s - %(name)s - %(levelname)s - [%(filename)s:%(lineno)d] - %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S"
-    )
-    file_handler.setFormatter(file_formatter)
-    logger.addHandler(file_handler)
+    # File handler (skipped on Vercel's read-only serverless filesystem)
+    if not os.getenv("VERCEL"):
+        os.makedirs("logs", exist_ok=True)
+        file_handler = logging.FileHandler("logs/agent.log", encoding="utf-8")
+        file_handler.setLevel(logging.DEBUG)
+        file_formatter = logging.Formatter(
+            "%(asctime)s - %(name)s - %(levelname)s - [%(filename)s:%(lineno)d] - %(message)s",
+            datefmt="%Y-%m-%d %H:%M:%S"
+        )
+        file_handler.setFormatter(file_formatter)
+        logger.addHandler(file_handler)
 
     return logger
 

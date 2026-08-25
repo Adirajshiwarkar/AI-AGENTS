@@ -10,7 +10,9 @@ from utils.logger import logger, log_generating_docx
 class DocumentGenerator:
     """Generates professional DOCX files from structured markdown-based text."""
 
-    def __init__(self, output_dir: str = "generated_docs"):
+    def __init__(self, output_dir: str = None):
+        if output_dir is None:
+            output_dir = "/tmp/generated_docs" if os.getenv("VERCEL") else "generated_docs"
         self.output_dir = output_dir
         os.makedirs(self.output_dir, exist_ok=True)
 
