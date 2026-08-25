@@ -7,7 +7,7 @@ from fastapi import APIRouter, HTTPException, status, Header
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
-DB_PATH = "users.db"
+DB_PATH = "/tmp/users.db" if os.getenv("VERCEL") else "users.db"
 SECRET_KEY = os.getenv("SECRET_KEY", "super_secret_agent_project_key_2026")
 
 class UserAuthRequest(BaseModel):
