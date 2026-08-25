@@ -1369,3 +1369,102 @@ The technical implementation plan for migrating our legacy monolithic ERP to a m
 2026-08-24 16:02:29 - agent_logger - INFO - [validator.py:17] - Validation succeeded: File generated_docs/business_report_1787567542.docx exists and is 41334 bytes.
 2026-08-24 16:02:29 - agent_logger - INFO - [workflow.py:136] - Generating final brief document summary...
 2026-08-24 16:02:30 - agent_logger - INFO - [logger.py:94] - Execution completed successfully.
+2026-08-25 16:11:11 - agent_logger - INFO - [test_agent.py:77] - =========================================
+2026-08-25 16:11:11 - agent_logger - INFO - [test_agent.py:78] - TESTING VALIDATION RULES
+2026-08-25 16:11:11 - agent_logger - INFO - [test_agent.py:79] - =========================================
+2026-08-25 16:11:11 - agent_logger - WARNING - [app.py:63] - Validation error on /agent: [{'field': 'body.request', 'message': 'Value error, Request must not be empty or blank.'}]
+2026-08-25 16:11:11 - agent_logger - INFO - [test_agent.py:84] - Empty request status (expected 422): 422
+2026-08-25 16:11:11 - agent_logger - WARNING - [app.py:63] - Validation error on /agent: [{'field': 'body.request', 'message': 'Value error, Request is too short. Please provide a more descriptive prompt (minimum 10 characters).'}]
+2026-08-25 16:11:11 - agent_logger - INFO - [test_agent.py:90] - Short request status (expected 422): 422
+2026-08-25 16:11:11 - agent_logger - INFO - [test_agent.py:92] - Validation tests passed successfully.
+
+2026-08-25 16:11:11 - agent_logger - INFO - [test_agent.py:18] - =========================================
+2026-08-25 16:11:11 - agent_logger - INFO - [test_agent.py:19] - TESTING EXAMPLE 1: AI Chatbot Proposal
+2026-08-25 16:11:11 - agent_logger - INFO - [test_agent.py:20] - =========================================
+2026-08-25 16:11:11 - agent_logger - INFO - [routes.py:100] - Received API request for streaming: 'Generate a project proposal for implementing an AI chatbot for customer support.'
+2026-08-25 16:11:11 - agent_logger - INFO - [logger.py:71] - [STEP] Planning Phase - Analyzing request, document type, and TODO list.
+2026-08-25 16:11:11 - agent_logger - INFO - [logger.py:75] - Planning process started.
+2026-08-25 16:11:11 - agent_logger - INFO - [llm_factory.py:28] - Initializing local Ollama LLM Provider...
+2026-08-25 16:11:11 - agent_logger - INFO - [ollama_client.py:20] - Ollama is running locally. Available models: ['mistral:latest', 'nova-cybernetics:latest', 'qwen2.5:0.5b']
+2026-08-25 16:11:11 - agent_logger - INFO - [planner.py:20] - Analyzing user intent and document type...
+2026-08-25 16:11:20 - agent_logger - INFO - [planner.py:44] - Identified Document Type: Business Proposal
+2026-08-25 16:11:20 - agent_logger - INFO - [planner.py:45] - Required Sections: ['Title Page', 'Executive Summary', 'Objectives', 'Background', 'Proposed Solution (Main Content)', '1. AI Chatbot Overview', '2. Benefits and Advantages', '3. Technology Stack', '4. Integration with Existing Systems', 'Implementation Plan (Timeline)', 'Cost Estimation', 'Risks & Mitigations', 'Conclusion']
+2026-08-25 16:11:20 - agent_logger - INFO - [planner.py:48] - Triggering assumption engine...
+2026-08-25 16:11:20 - agent_logger - INFO - [assumption_engine.py:12] - Generating assumptions for request of type: Business Proposal
+2026-08-25 16:11:24 - agent_logger - INFO - [assumption_engine.py:38] - Successfully generated assumptions: ['The project scope includes defining clear use cases and customer support scenarios for the AI chatbot.', 'A budget has been allocated to cover the costs of AI model training, development, integration with existing systems, and maintenance.', 'There is a dedicated team with expertise in AI, machine learning, software development, and customer support available for this project.', 'The timeline for the project includes allowance for testing, iterations, and adjustments to ensure the AI chatbot meets customer needs and expectations.', 'Integration of the AI chatbot with existing customer support systems (e.g., CRM, ticketing system) is necessary for seamless operation and data synchronization.', 'Organizational readiness for AI adoption includes understanding the benefits, potential risks, and strategies for managing user privacy and data security.']
+2026-08-25 16:11:24 - agent_logger - INFO - [logger.py:79] - TODO list creation started.
+2026-08-25 16:11:33 - agent_logger - INFO - [planner.py:81] - Generated task plan: ['Understand request: Generate a project proposal for implementing an AI chatbot for customer support.', 'Extract objectives: Identify the main goals and benefits of the proposed AI chatbot implementation.', 'Identify document type: Recognize that the document to be generated is a Business Proposal.', 'Determine required sections: Based on the provided list, organize the proposal into the following sections: Title Page, Executive Summary, Objectives, Background, Proposed Solution (Main Content), 1. AI Chatbot Overview, 2. Benefits and Advantages, 3. Technology Stack, 4. Integration with Existing Systems, Implementation Plan (Timeline), Cost Estimation, Risks & Mitigations, Conclusion.', 'Create assumptions: Acknowledge the following assumptions: The project scope includes defining clear use cases and customer support scenarios for the AI chatbot, a budget has been allocated to cover the costs of AI model training, development, integration with existing systems, and maintenance, there is a dedicated team with expertise in AI, machine learning, software development, and customer support available for this project, the timeline for the project includes allowance for testing, iterations, and adjustments to ensure the AI chatbot meets customer needs and expectations, integration of the AI chatbot with existing customer support systems (e.g., CRM, ticketing system) is necessary for seamless operation and data synchronization, organizational readiness for AI adoption includes understanding the benefits, potential risks, and strategies for managing user privacy and data security.', 'Generate outline: Create an outline based on the required sections and assumptions to guide the content generation process.', 'Generate content: Write the content for each section of the proposal, ensuring it is clear, concise, and informative.', 'Format document: Organize the formatting of the proposal, including fonts, headings, subheadings, and spacing to make it visually appealing and easy to read.', 'Validate document: Review the proposal for accuracy, consistency, and adherence to the outline and assumptions.', 'Reflect and improve: Evaluate the completed proposal and consider ways to further optimize its content, structure, or presentation.']
+2026-08-25 16:11:33 - agent_logger - INFO - [logger.py:71] - [STEP] Execution Phase - Running 10 tasks sequentially.
+2026-08-25 16:11:33 - agent_logger - INFO - [logger.py:83] - Executing Task 1: Understand request: Generate a project proposal for implementing an AI chatbot for customer support.
+2026-08-25 16:11:33 - agent_logger - INFO - [executor.py:35] - Task 'Understand request: Generate a project proposal for implementing an AI chatbot for customer support.' executed successfully.
+2026-08-25 16:11:33 - agent_logger - INFO - [logger.py:83] - Executing Task 2: Extract objectives: Identify the main goals and benefits of the proposed AI chatbot implementation.
+2026-08-25 16:11:33 - agent_logger - INFO - [executor.py:35] - Task 'Extract objectives: Identify the main goals and benefits of the proposed AI chatbot implementation.' executed successfully.
+2026-08-25 16:11:33 - agent_logger - INFO - [logger.py:83] - Executing Task 3: Identify document type: Recognize that the document to be generated is a Business Proposal.
+2026-08-25 16:11:33 - agent_logger - INFO - [executor.py:35] - Task 'Identify document type: Recognize that the document to be generated is a Business Proposal.' executed successfully.
+2026-08-25 16:11:33 - agent_logger - INFO - [logger.py:83] - Executing Task 4: Determine required sections: Based on the provided list, organize the proposal into the following sections: Title Page, Executive Summary, Objectives, Background, Proposed Solution (Main Content), 1. AI Chatbot Overview, 2. Benefits and Advantages, 3. Technology Stack, 4. Integration with Existing Systems, Implementation Plan (Timeline), Cost Estimation, Risks & Mitigations, Conclusion.
+2026-08-25 16:11:33 - agent_logger - INFO - [executor.py:35] - Task 'Determine required sections: Based on the provided list, organize the proposal into the following sections: Title Page, Executive Summary, Objectives, Background, Proposed Solution (Main Content), 1. AI Chatbot Overview, 2. Benefits and Advantages, 3. Technology Stack, 4. Integration with Existing Systems, Implementation Plan (Timeline), Cost Estimation, Risks & Mitigations, Conclusion.' executed successfully.
+2026-08-25 16:11:33 - agent_logger - INFO - [logger.py:83] - Executing Task 5: Create assumptions: Acknowledge the following assumptions: The project scope includes defining clear use cases and customer support scenarios for the AI chatbot, a budget has been allocated to cover the costs of AI model training, development, integration with existing systems, and maintenance, there is a dedicated team with expertise in AI, machine learning, software development, and customer support available for this project, the timeline for the project includes allowance for testing, iterations, and adjustments to ensure the AI chatbot meets customer needs and expectations, integration of the AI chatbot with existing customer support systems (e.g., CRM, ticketing system) is necessary for seamless operation and data synchronization, organizational readiness for AI adoption includes understanding the benefits, potential risks, and strategies for managing user privacy and data security.
+2026-08-25 16:11:33 - agent_logger - INFO - [executor.py:35] - Task 'Create assumptions: Acknowledge the following assumptions: The project scope includes defining clear use cases and customer support scenarios for the AI chatbot, a budget has been allocated to cover the costs of AI model training, development, integration with existing systems, and maintenance, there is a dedicated team with expertise in AI, machine learning, software development, and customer support available for this project, the timeline for the project includes allowance for testing, iterations, and adjustments to ensure the AI chatbot meets customer needs and expectations, integration of the AI chatbot with existing customer support systems (e.g., CRM, ticketing system) is necessary for seamless operation and data synchronization, organizational readiness for AI adoption includes understanding the benefits, potential risks, and strategies for managing user privacy and data security.' executed successfully.
+2026-08-25 16:11:33 - agent_logger - INFO - [logger.py:83] - Executing Task 6: Generate outline: Create an outline based on the required sections and assumptions to guide the content generation process.
+2026-08-25 16:11:33 - agent_logger - INFO - [executor.py:43] - Generating content for 13 sections...
+2026-08-25 16:11:33 - agent_logger - INFO - [executor.py:55] - Generating section: Title Page
+2026-08-25 16:11:36 - agent_logger - INFO - [executor.py:55] - Generating section: Executive Summary
+2026-08-25 16:11:45 - agent_logger - INFO - [executor.py:55] - Generating section: Objectives
+2026-08-25 16:11:55 - agent_logger - INFO - [executor.py:55] - Generating section: Background
+2026-08-25 16:12:05 - agent_logger - INFO - [executor.py:55] - Generating section: Proposed Solution (Main Content)
+2026-08-25 16:12:20 - agent_logger - INFO - [executor.py:55] - Generating section: 1. AI Chatbot Overview
+2026-08-25 16:12:35 - agent_logger - INFO - [executor.py:55] - Generating section: 2. Benefits and Advantages
+2026-08-25 16:12:48 - agent_logger - INFO - [executor.py:55] - Generating section: 3. Technology Stack
+2026-08-25 16:13:02 - agent_logger - INFO - [executor.py:55] - Generating section: 4. Integration with Existing Systems
+2026-08-25 16:13:15 - agent_logger - INFO - [executor.py:55] - Generating section: Implementation Plan (Timeline)
+2026-08-25 16:13:31 - agent_logger - INFO - [executor.py:55] - Generating section: Cost Estimation
+2026-08-25 16:13:48 - agent_logger - INFO - [executor.py:55] - Generating section: Risks & Mitigations
+2026-08-25 16:14:00 - agent_logger - INFO - [executor.py:55] - Generating section: Conclusion
+2026-08-25 16:14:11 - agent_logger - INFO - [logger.py:83] - Executing Task 7: Generate content: Write the content for each section of the proposal, ensuring it is clear, concise, and informative.
+2026-08-25 16:14:11 - agent_logger - INFO - [executor.py:43] - Generating content for 13 sections...
+2026-08-25 16:14:11 - agent_logger - INFO - [executor.py:55] - Generating section: Title Page
+2026-08-25 16:14:17 - agent_logger - INFO - [executor.py:55] - Generating section: Executive Summary
+2026-08-25 16:14:24 - agent_logger - INFO - [executor.py:55] - Generating section: Objectives
+2026-08-25 16:14:31 - agent_logger - INFO - [executor.py:55] - Generating section: Background
+2026-08-25 16:14:44 - agent_logger - INFO - [executor.py:55] - Generating section: Proposed Solution (Main Content)
+2026-08-25 16:14:58 - agent_logger - INFO - [executor.py:55] - Generating section: 1. AI Chatbot Overview
+2026-08-25 16:15:15 - agent_logger - INFO - [executor.py:55] - Generating section: 2. Benefits and Advantages
+2026-08-25 16:15:28 - agent_logger - INFO - [executor.py:55] - Generating section: 3. Technology Stack
+2026-08-25 16:15:39 - agent_logger - INFO - [executor.py:55] - Generating section: 4. Integration with Existing Systems
+2026-08-25 16:15:51 - agent_logger - INFO - [executor.py:55] - Generating section: Implementation Plan (Timeline)
+2026-08-25 16:16:02 - agent_logger - INFO - [executor.py:55] - Generating section: Cost Estimation
+2026-08-25 16:16:17 - agent_logger - INFO - [executor.py:55] - Generating section: Risks & Mitigations
+2026-08-25 16:16:29 - agent_logger - INFO - [executor.py:55] - Generating section: Conclusion
+2026-08-25 16:16:35 - agent_logger - INFO - [logger.py:83] - Executing Task 8: Format document: Organize the formatting of the proposal, including fonts, headings, subheadings, and spacing to make it visually appealing and easy to read.
+2026-08-25 16:16:35 - agent_logger - INFO - [executor.py:28] - Preparing formatting styles, typography, and page numbers.
+2026-08-25 16:16:35 - agent_logger - INFO - [logger.py:83] - Executing Task 9: Validate document: Review the proposal for accuracy, consistency, and adherence to the outline and assumptions.
+2026-08-25 16:16:35 - agent_logger - INFO - [executor.py:30] - Initiating structural and file presence checks.
+2026-08-25 16:16:35 - agent_logger - INFO - [logger.py:83] - Executing Task 10: Reflect and improve: Evaluate the completed proposal and consider ways to further optimize its content, structure, or presentation.
+2026-08-25 16:16:35 - agent_logger - INFO - [executor.py:32] - Readying quality assurance (QA) reflection pipeline.
+2026-08-25 16:16:35 - agent_logger - INFO - [logger.py:71] - [STEP] Document Generation - Compiling markdown to styled Word Document.
+2026-08-25 16:16:35 - agent_logger - INFO - [logger.py:87] - Document generation started.
+2026-08-25 16:16:35 - agent_logger - INFO - [document_generator.py:103] - Document successfully saved to generated_docs/business_proposal_1787654795.docx
+2026-08-25 16:16:35 - agent_logger - INFO - [logger.py:71] - [STEP] Reflection Phase - Auditing document quality with LLM Self-Check.
+2026-08-25 16:16:35 - agent_logger - INFO - [logger.py:91] - Self-reflection process started.
+2026-08-25 16:16:40 - agent_logger - INFO - [reflection.py:48] - Reflection complete. Status: PASS. Missing: []
+2026-08-25 16:16:40 - agent_logger - INFO - [logger.py:71] - [STEP] Verification - Validating final document file status.
+2026-08-25 16:16:40 - agent_logger - INFO - [validator.py:17] - Validation succeeded: File generated_docs/business_proposal_1787654795.docx exists and is 49469 bytes.
+2026-08-25 16:16:40 - agent_logger - INFO - [workflow.py:136] - Generating final brief document summary...
+2026-08-25 16:16:42 - agent_logger - INFO - [logger.py:95] - Execution completed successfully.
+2026-08-25 16:16:42 - agent_logger - INFO - [test_agent.py:28] - Response Status Code: 200
+2026-08-25 16:16:42 - agent_logger - ERROR - [test_agent.py:105] - Test Error: Extra data: line 2 column 1 (char 103)
+Traceback (most recent call last):
+  File "/home/ai/Downloads/AI AGENT/agent_project/test_agent.py", line 98, in <module>
+    test_example_1_chatbot()
+  File "/home/ai/Downloads/AI AGENT/agent_project/test_agent.py", line 31, in test_example_1_chatbot
+    data = response.json()
+           ^^^^^^^^^^^^^^^
+  File "/home/ai/Downloads/AI AGENT/agent_project/.venv/lib/python3.11/site-packages/httpx/_models.py", line 832, in json
+    return jsonlib.loads(self.content, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 340, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 2 column 1 (char 103)
