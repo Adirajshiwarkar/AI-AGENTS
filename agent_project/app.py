@@ -7,6 +7,7 @@ from fastapi import FastAPI, Request, status, HTTPException
 from fastapi.responses import JSONResponse, FileResponse
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from dotenv import load_dotenv
 
 from api.routes import router as agent_router
@@ -103,6 +104,21 @@ async def health():
         "status": "healthy",
         "timestamp": os.getenv("CURRENT_TIME", "2026-07-09T11:24:58+05:30")
     }
+
+# Serve React static assets in production
+frontend_dist = os.path.join(os.path.dirname(__file__), "frontend", "dist")
+if os.path.exists(frontend_dist):
+    app.mount("/assets", StaticFiles(directory=os.path.join(frontend_dist, "assets")), name="assets")
+    
+    @app.get("/{full_path:path}")
+    async def serve_frontend(full_path: str):
+        # Prevent catching API/download routes
+        if full_path.startswith("auth") or full_path.startswith("agent") or full_path.startswith("download"):
+            raise HTTPException(status_code=404, detail="API route not found")
+        index_path = os.path.join(frontend_dist, "index.html")
+        if os.path.exists(index_path):
+            return FileResponse(index_path)
+        raise HTTPException(status_code=404, detail="Frontend build files not found")
 
 if __name__ == "__main__":
     from run_cli import main as cli_main
