@@ -203,25 +203,7 @@ a:hover {
   .md\:p-8 { padding: 32px; }
 }
 
-.px-3 { padding-left: 12px; padding-right: 12px; }
-.px-3\.5 { padding-left: 14px; padding-right: 14px; }
-.px-4 { padding-left: 16px; padding-right: 16px; }
-.px-6 { padding-left: 24px; padding-right: 24px; }
-.px-2\.5 { padding-left: 10px; padding-right: 10px; }
 
-.py-1\.5 { padding-top: 6px; padding-bottom: 6px; }
-.py-2 { padding-top: 8px; padding-bottom: 8px; }
-.py-2\.5 { padding-top: 10px; padding-bottom: 10px; }
-.py-3 { padding-top: 12px; padding-bottom: 12px; }
-.py-4 { padding-top: 16px; padding-bottom: 16px; }
-
-.pl-4 { padding-left: 16px; }
-.pr-4 { padding-right: 16px; }
-.pt-4 { padding-top: 16px; }
-.pt-2 { padding-top: 8px; }
-.pt-6 { padding-top: 24px; }
-.pl-11 { padding-left: 44px; }
-.pl-3\.5 { padding-left: 14px; }
 
 .mb-1 { margin-bottom: 4px; }
 .mb-1\.5 { margin-bottom: 6px; }
@@ -579,3 +561,24 @@ a:hover {
 .thinking-wave-bar:nth-child(3) { animation-delay: 0.3s; background-color: var(--secondary); }
 .thinking-wave-bar:nth-child(4) { animation-delay: 0.45s; background-color: var(--secondary); }
 .thinking-wave-bar:nth-child(5) { animation-delay: 0.6s; background-color: var(--primary); }
+
+/* Spacing and Padding Utilities (placed at bottom to override component base styles) */
+.px-3 { padding-left: 12px; padding-right: 12px; }
+.px-3\.5 { padding-left: 14px; padding-right: 14px; }
+.px-4 { padding-left: 16px; padding-right: 16px; }
+.px-6 { padding-left: 24px; padding-right: 24px; }
+.px-2\.5 { padding-left: 10px; padding-right: 10px; }
+
+.py-1\.5 { padding-top: 6px; padding-bottom: 6px; }
+.py-2 { padding-top: 8px; padding-bottom: 8px; }
+.py-2\.5 { padding-top: 10px; padding-bottom: 10px; }
+.py-3 { padding-top: 12px; padding-bottom: 12px; }
+.py-4 { padding-top: 16px; padding-bottom: 16px; }
+
+.pl-4 { padding-left: 16px; }
+.pr-4 { padding-right: 16px; }
+.pt-4 { padding-top: 16px; }
+.pt-2 { padding-top: 8px; }
+.pt-6 { padding-top: 24px; }
+.pl-11 { padding-left: 44px; }
+.pl-3\.5 { padding-left: 14px; }
